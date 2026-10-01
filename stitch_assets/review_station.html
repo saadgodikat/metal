@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "workspace-bg": "#090A0F",
+        "surface": "#12131A",
+        "surface-dark": "#0B0C11",
+        "surface-panel": "#181926",
+        "surface-card": "#1E1F30",
+        "border-hairline": "#272738",
+        "border-subtle": "#1F202E",
+        "cyan-neon": "#00F0FF",
+        "cyan-bright": "#38BDF8",
+        "cyan-dim": "rgba(0, 240, 255, 0.15)",
+        "on-surface": "#FFFFFF",
+        "text-secondary": "#D4D4D8",
+        "text-muted": "#A1A1AA",
+        "danger-accent": "#EF4444",
+        "danger-dim": "rgba(239, 68, 68, 0.15)",
+        "emerald-accent": "#10B981"
+      },
+      borderRadius: {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      spacing: {
+        "space-md": "0.75rem",
+        "margin": "1rem",
+        "space-lg": "1rem",
+        "space-xl": "1.5rem",
+        "gutter": "0.75rem",
+        "space-sm": "0.375rem",
+        "space-xs": "0.25rem"
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"]
+      }
+    }
+  }
+};</script></head><body class="bg-workspace-bg font-sans text-on-surface antialiased selection:bg-cyan-neon selection:text-black min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-[#08090E] z-50 flex flex-col border-r border-border-hairline select-none"><div class="h-14 px-space-lg flex items-center justify-between border-b border-border-hairline bg-surface-dark"><div class="flex items-center gap-space-sm min-w-0"><img alt="ApexVision Logo" class="h-7 w-7 object-contain rounded" src="https://lh3.googleusercontent.com/aida/AEtjO1XeO3qxc0W6srOqj69jZu5DGgTtxWYzghzggFTRKMHLmFigDZNBPmKthbkUsnwRJqD4oYJqYcu31Xblt6LQ8thczVA0uuZsKixYXG4Y-RnZphyUiwGAFjJ6XUqO2PnRoN7MchqpfVDLUtPnJ7w6QC54E33QpxsnVuP1d853rbwG5RRXm-Kt85_cu2y57H5pBl0DN75_dE8OfHhrMXaSBsMCl2Zr4WV-i8uLTN0raxCBCpj9s-rmWTW8xwBo"/><span class="font-semibold text-[16px] text-white tracking-tight truncate">ApexVision</span></div><span class="px-space-xs py-0.5 rounded bg-surface border border-cyan-neon/30 text-cyan-neon font-mono text-[10px] tracking-wide shrink-0">v2.4 Enterprise</span></div><div class="flex-1 overflow-y-auto px-space-md py-space-md space-y-space-md"><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-mono text-[10px] uppercase tracking-wider text-text-muted">PRIMARY</div><nav class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-surface-panel hover:text-white transition-colors text-[13px]" data-path="executive-dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Executive Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-surface-panel hover:text-white transition-colors text-[13px]" data-path="products-and-batches" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span>Products &amp; Batches</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-surface-panel hover:text-white transition-colors text-[13px]" data-path="defect-register" href="#"><span class="material-symbols-outlined text-[18px]">flag</span><span>Defect Register</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-mono text-[10px] uppercase tracking-wider text-text-muted">OPERATIONS</div><nav class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-surface-panel hover:text-white transition-colors text-[13px]" data-path="inspection-intake" href="#"><span class="material-symbols-outlined text-[18px]">input</span><span>Inspection Intake</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs rounded transition-colors bg-cyan-dim border border-cyan-neon/40 text-cyan-neon font-medium text-[13px]" data-path="review-station" href="#"><span class="material-symbols-outlined text-[18px]">biotech</span><span>Review Station</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-surface-panel hover:text-white transition-colors text-[13px]" data-path="reinspection" href="#"><span class="material-symbols-outlined text-[18px]">replay</span><span>Reinspection</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-surface-panel hover:text-white transition-colors text-[13px]" data-path="batch-release-gate" href="#"><span class="material-symbols-outlined text-[18px]">verified</span><span>Batch Release Gate</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-mono text-[10px] uppercase tracking-wider text-text-muted">INTELLIGENCE</div><nav class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-surface-panel hover:text-white transition-colors text-[13px]" data-path="grounded-genai-copilot" href="#"><span class="material-symbols-outlined text-[18px]">neurology</span><span>Grounded GenAI Copilot</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-surface-panel hover:text-white transition-colors text-[13px]" data-path="ml-evaluation-suite" href="#"><span class="material-symbols-outlined text-[18px]">analytics</span><span>ML Evaluation Suite</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-surface-panel hover:text-white transition-colors text-[13px]" data-path="smart-triage-innovation" href="#"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span>Smart Triage Innovation</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-mono text-[10px] uppercase tracking-wider text-text-muted">SYSTEM</div><nav class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-surface-panel hover:text-white transition-colors text-[13px]" data-path="audit-trail" href="#"><span class="material-symbols-outlined text-[18px]">history_edu</span><span>Audit Trail</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-surface-panel hover:text-white transition-colors text-[13px]" data-path="settings-and-role-matrix" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span>Settings &amp; Role Matrix</span></a></nav></div></div><div class="border-t border-border-hairline bg-surface-dark p-space-md space-y-space-sm"><div class="p-space-xs rounded bg-surface border border-border-hairline space-y-1"><div class="flex items-center justify-between"><span class="font-mono text-[11px] text-text-secondary flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-neon animate-pulse shadow-[0_0_8px_#00F0FF]"></span>Edge Node 04</span><span class="font-mono text-[11px] text-cyan-bright font-semibold">Operational</span></div><div class="flex items-center justify-between font-mono text-[10px] text-text-muted"><span>Uptime: 99.98%</span><span>Latency: 2.4ms</span></div></div><div class="flex items-center gap-space-sm pt-space-xs"><img alt="Inspector Portrait" class="w-8 h-8 rounded-full border border-cyan-neon/40 object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XoMozUk4S-02F-rMzotxnSMYU2PEyQvgT3GaywosFQwEpSG5Gr6OweazMZ0NQdq17axZ7idUf4ZWMdTl5bTulJ8HJZ0O24_Bm8q3lHK296BQbvVplYpkV1QYQ-vPhC34JLocsXRxOKVch8S3pMiKcum2O4ZZFzeJ-RFLvNNLSpPakNrKKzW8e0Nml4eODzBhRiCx2yBial5zlFdXSXRL6Ilz9D36mnIYtFr_aEPojK1K4JzBHfN6mtyOU"/><div class="min-w-0 flex-1"><div class="text-[13px] text-white font-medium truncate">Mike Vance</div><div class="font-mono text-[10px] text-text-muted truncate">Lead Inspector • Cleanroom 4</div></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen bg-workspace-bg"><header class="fixed top-0 left-72 right-0 h-14 bg-surface-dark/95 backdrop-blur-md border-b border-border-hairline z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-mono text-[12px] text-text-muted"><span class="font-semibold text-white">Terminal 04</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-cyan-bright">AOI Real-Time Telemetry</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="px-space-xs py-0.5 rounded bg-surface font-mono text-[10px] text-cyan-neon border border-cyan-neon/30">LINE A-ACTIVE</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-text-muted text-[16px]">search</span><input class="h-8 pl-8 pr-12 rounded bg-surface border border-border-hairline text-white placeholder:text-text-muted font-sans text-[12px] focus:outline-none focus:border-cyan-neon w-64 transition-all" placeholder="Search telemetry, batches, defects..." type="text"/><span class="absolute right-2 px-1 rounded bg-surface-panel text-text-muted font-mono text-[10px] border border-border-hairline">⌘K</span></div><div class="relative cursor-pointer"><button class="h-8 w-8 rounded bg-surface border border-border-hairline flex items-center justify-center text-text-secondary hover:text-white hover:bg-surface-panel transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span></button><span class="absolute -top-1 -right-1 px-1 py-0.2 rounded-full bg-danger-accent text-white font-mono text-[9px] font-bold border border-surface-dark">3</span></div><div class="relative"><button class="h-8 px-space-sm rounded bg-surface border border-cyan-neon/40 flex items-center gap-1.5 text-white hover:border-cyan-neon transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-cyan-neon shadow-[0_0_6px_#00F0FF]"></span><span class="font-mono text-[11px] font-semibold text-cyan-bright">Role: Inspector</span><span class="material-symbols-outlined text-text-muted text-[14px]">arrow_drop_down</span></button></div><div class="h-4 w-px bg-border-hairline"></div><div class="flex items-center gap-space-sm"><div class="relative"><img alt="Inspector Profile" class="w-8 h-8 rounded-full border border-cyan-neon/40 object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XoMozUk4S-02F-rMzotxnSMYU2PEyQvgT3GaywosFQwEpSG5Gr6OweazMZ0NQdq17axZ7idUf4ZWMdTl5bTulJ8HJZ0O24_Bm8q3lHK296BQbvVplYpkV1QYQ-vPhC34JLocsXRxOKVch8S3pMiKcum2O4ZZFzeJ-RFLvNNLSpPakNrKKzW8e0Nml4eODzBhRiCx2yBial5zlFdXSXRL6Ilz9D36mnIYtFr_aEPojK1K4JzBHfN6mtyOU"/><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-cyan-neon ring-2 ring-surface-dark"></span></div></div></div></header><main class="flex-1 pt-14 w-full bg-workspace-bg"><div class="flex flex-col w-full h-[calc(100vh-3.5rem)] overflow-hidden">
+<!-- Operational Top Control Sub-Header -->
+<div class="h-10 bg-surface-dark px-space-lg flex items-center justify-between shrink-0 border-b border-border-hairline">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded bg-cyan-dim border border-cyan-neon/30 text-cyan-neon">
+<span class="material-symbols-outlined text-[14px]">biotech</span>
+</span>
+<span class="font-semibold text-[14px] text-white tracking-tight">AI Review &amp; Defect Triage Station</span>
+</div>
+<div class="h-3 w-px bg-border-hairline"></div>
+<div class="flex items-center gap-2 font-mono text-[11px] text-text-secondary">
+<span class="text-text-muted">WORKCELL:</span>
+<span class="px-1.5 py-0.5 rounded bg-surface border border-border-hairline text-white font-semibold">CW-04 AEROSPACE</span>
+<span class="text-border-hairline">•</span>
+<span class="text-text-muted">LINE SYNC:</span>
+<span class="text-cyan-neon font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-cyan-neon animate-pulse shadow-[0_0_6px_#00F0FF]"></span>ACTIVE (240 FPS)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1 font-mono text-[11px] text-text-muted">
+<span>SESSION REVIEWS:</span>
+<span class="text-white font-semibold">42</span>
+<span class="mx-1 text-border-hairline">/</span>
+<span>DISCREPANCY RATE:</span>
+<span class="text-danger-accent font-semibold">4.8%</span>
+</div>
+<div class="flex items-center gap-1 bg-surface px-2 py-0.5 rounded border border-border-hairline">
+<span class="material-symbols-outlined text-cyan-bright text-[14px]">timer</span>
+<span class="font-mono text-[11px] text-white" id="session-timer">00:18:42</span>
+</div>
+<button class="px-2 py-0.5 rounded bg-surface hover:bg-surface-panel border border-border-hairline text-text-secondary text-[11px] font-mono flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">keyboard</span>
+<span>Hotkeys [?]</span>
+</button>
+</div>
+</div>
+<!-- Main 3-Column Workstation Canvas -->
+<div class="flex-1 grid grid-cols-12 overflow-hidden bg-workspace-bg">
+<!-- COLUMN 1: Inspection Queue (Left Rail, 3 cols) -->
+<div class="col-span-3 flex flex-col bg-surface-dark overflow-hidden border-r border-border-hairline z-10">
+<!-- Queue Header & Filter Tabs -->
+<div class="p-space-md bg-surface flex flex-col gap-space-sm shrink-0 border-b border-border-hairline">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-cyan-neon text-[18px]">view_timeline</span>
+<span class="font-semibold text-[14px] text-white">Inspection Queue</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-panel border border-cyan-neon/30 text-cyan-neon font-mono text-[11px] font-semibold">12 In Buffer</span>
+</div>
+<!-- Filter Segmented Tabs -->
+<div class="grid grid-cols-3 gap-1 p-0.5 rounded bg-surface-dark border border-border-hairline">
+<button class="py-1 px-2 rounded bg-cyan-dim border border-cyan-neon/40 text-cyan-neon font-mono text-[11px] font-semibold flex items-center justify-center gap-1 transition-colors">
+<span>Pending</span>
+<span class="bg-cyan-neon/20 px-1 py-0.2 rounded text-[9px] text-cyan-neon">3</span>
+</button>
+<button class="py-1 px-2 rounded text-text-muted hover:text-white hover:bg-surface-panel font-mono text-[11px] transition-colors flex items-center justify-center gap-1">
+<span>Passed</span>
+<span class="bg-surface px-1 py-0.2 rounded text-[9px]">7</span>
+</button>
+<button class="py-1 px-2 rounded text-text-muted hover:text-white hover:bg-surface-panel font-mono text-[11px] transition-colors flex items-center justify-center gap-1">
+<span>False Pos</span>
+<span class="bg-surface px-1 py-0.2 rounded text-[9px]">2</span>
+</button>
+</div>
+</div>
+<!-- Queue Card List -->
+<div class="flex-1 overflow-y-auto p-space-sm space-y-space-xs bg-workspace-bg">
+<!-- ITEM 1: Active Selected -->
+<div class="relative p-space-sm rounded bg-surface-panel border border-cyan-neon/50 shadow-[0_0_12px_rgba(0,240,255,0.08)] cursor-pointer transition-all hover:border-cyan-neon">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-cyan-neon rounded-l"></div>
+<div class="flex items-center justify-between mb-1 pl-1">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-[13px] font-bold text-white">#ITM-B101-001</span>
+<span class="px-1.5 py-0.2 rounded bg-danger-dim border border-danger-accent/40 text-danger-accent font-mono text-[10px] font-semibold uppercase tracking-wider">Scratch</span>
+</div>
+<span class="font-mono text-[11px] text-text-muted flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">schedule</span> 4m
+</span>
+</div>
+<div class="grid grid-cols-2 gap-1 text-[11px] text-text-secondary pl-1 mb-2">
+<div>Batch: <span class="text-white font-medium">B-101 (Aero Flange)</span></div>
+<div class="text-right">AI Conf: <span class="text-cyan-neon font-mono font-bold">95.8%</span></div>
+</div>
+<!-- Micro Confidence Level Bar -->
+<div class="pl-1">
+<div class="w-full bg-surface-dark h-1 rounded overflow-hidden border border-border-hairline">
+<div class="bg-cyan-neon h-full rounded shadow-[0_0_6px_#00F0FF]" style="width: 95.8%;"></div>
+</div>
+</div>
+<div class="mt-2 pl-1 flex items-center justify-between font-mono text-[11px] text-cyan-bright">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-cyan-neon animate-ping"></span> Under Review
+</span>
+<span class="text-text-muted">POS: CAM-Z: 14.2</span>
+</div>
+</div>
+<!-- ITEM 2 -->
+<div class="p-space-sm rounded bg-surface border border-border-hairline hover:border-border-hairline/80 hover:bg-surface-panel transition-all cursor-pointer">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-[13px] font-semibold text-white/90">#ITM-B101-002</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-card border border-border-hairline text-text-secondary font-mono text-[10px] uppercase">Porosity</span>
+</div>
+<span class="font-mono text-[11px] text-text-muted flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">schedule</span> 9m
+</span>
+</div>
+<div class="grid grid-cols-2 gap-1 text-[11px] text-text-secondary mb-2">
+<div>Batch: <span class="text-white font-medium">B-101 (Turbine Rotor)</span></div>
+<div class="text-right">AI Conf: <span class="text-text-secondary font-mono font-semibold">88.4%</span></div>
+</div>
+<div class="w-full bg-surface-dark h-1 rounded overflow-hidden border border-border-hairline">
+<div class="bg-text-secondary h-full rounded" style="width: 88.4%;"></div>
+</div>
+<div class="mt-2 flex items-center justify-between font-mono text-[11px] text-text-muted">
+<span>Rig 02 • High Magnify</span>
+<span>POS: CAM-A: 02.1</span>
+</div>
+</div>
+<!-- ITEM 3 -->
+<div class="p-space-sm rounded bg-surface border border-border-hairline hover:border-border-hairline/80 hover:bg-surface-panel transition-all cursor-pointer">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-[13px] font-semibold text-white/90">#ITM-B102-014</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-card border border-border-hairline text-cyan-bright font-mono text-[10px] uppercase">Outlier</span>
+</div>
+<span class="font-mono text-[11px] text-text-muted flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">schedule</span> 15m
+</span>
+</div>
+<div class="grid grid-cols-2 gap-1 text-[11px] text-text-secondary mb-2">
+<div>Batch: <span class="text-white font-medium">B-102 (Bearing Ring)</span></div>
+<div class="text-right">AI Conf: <span class="text-text-secondary font-mono font-semibold">91.2%</span></div>
+</div>
+<div class="w-full bg-surface-dark h-1 rounded overflow-hidden border border-border-hairline">
+<div class="bg-cyan-bright/70 h-full rounded" style="width: 91.2%;"></div>
+</div>
+<div class="mt-2 flex items-center justify-between font-mono text-[11px] text-text-muted">
+<span>Rig 04 • Polarized 48M</span>
+<span>DIM: Ø 9.53mm</span>
+</div>
+</div>
+<!-- System Stream status mini banner -->
+<div class="p-space-sm rounded bg-surface border border-border-hairline mt-4 space-y-1">
+<div class="flex items-center justify-between font-mono text-[11px] text-text-secondary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-cyan-neon">memory</span>
+Edge Conveyor Queue
+</span>
+<span class="text-cyan-neon font-bold">NORMAL</span>
+</div>
+<div class="flex items-center justify-between font-mono text-[10px] text-text-muted">
+<span>Buffer Fill: 18%</span>
+<span>Throughput: 140 pcs/hr</span>
+</div>
+</div>
+</div>
+<!-- Quick Triage Action Footer -->
+<div class="p-space-sm bg-surface-dark shrink-0 flex items-center justify-between font-mono text-[11px] text-text-secondary border-t border-border-hairline">
+<span>Auto-Advance on submit:</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-8 h-4 bg-surface-panel peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-black after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-cyan-neon"></div>
+</label>
+</div>
+</div>
+<!-- COLUMN 2: Center Optical Inspection Viewer (Flex-1 / 6 cols) -->
+<div class="col-span-6 flex flex-col bg-black overflow-hidden relative border-r border-border-hairline">
+<!-- Viewer Controls Toolbar -->
+<div class="h-11 px-space-md bg-surface-dark/95 backdrop-blur flex items-center justify-between shrink-0 z-20 border-b border-border-hairline">
+<div class="flex items-center gap-1">
+<!-- Zoom Controls -->
+<div class="flex items-center bg-surface rounded p-0.5 border border-border-hairline">
+<button class="px-2 py-0.5 text-mono text-[11px] rounded hover:bg-surface-panel text-text-secondary font-medium transition-colors">100%</button>
+<button class="px-2 py-0.5 text-mono text-[11px] rounded bg-cyan-dim border border-cyan-neon/50 text-cyan-neon font-bold transition-colors">200%</button>
+<button class="px-2 py-0.5 text-mono text-[11px] rounded hover:bg-surface-panel text-text-muted transition-colors">FIT</button>
+</div>
+<button class="w-8 h-8 rounded flex items-center justify-center text-text-muted hover:bg-surface hover:text-white transition-colors" id="btn-pan" title="Pan tool">
+<span class="material-symbols-outlined text-[18px]">drag_pan</span>
+</button>
+<div class="h-4 w-px bg-border-hairline mx-1"></div>
+<!-- Layer Toggles -->
+<button class="px-2 py-1 rounded bg-surface hover:bg-surface-panel border border-border-hairline text-white text-[11px] font-mono flex items-center gap-1.5 transition-colors" id="toggle-heatmap">
+<span class="material-symbols-outlined text-cyan-neon text-[15px]">grain</span>
+<span>Heatmap</span>
+</button>
+<button class="px-2 py-1 rounded bg-surface hover:bg-surface-panel border border-border-hairline text-white text-[11px] font-mono flex items-center gap-1.5 transition-colors" id="toggle-reticle">
+<span class="material-symbols-outlined text-cyan-bright text-[15px]">filter_center_focus</span>
+<span>Laser Reticle</span>
+</button>
+<button class="px-2 py-1 rounded bg-surface hover:bg-surface-panel border border-border-hairline text-text-muted hover:text-white text-[11px] font-mono flex items-center gap-1 transition-colors" id="toggle-invert">
+<span class="material-symbols-outlined text-[15px]">contrast</span>
+<span>Invert</span>
+</button>
+</div>
+<div class="flex items-center gap-1">
+<div class="flex items-center gap-1 font-mono text-[11px] text-text-muted bg-surface px-2 py-1 rounded border border-border-hairline">
+<span>FOV: 35.4mm</span>
+<span class="text-border-hairline">•</span>
+<span>MAG: 18.5x</span>
+</div>
+<button class="w-8 h-8 rounded flex items-center justify-center text-text-muted hover:bg-surface hover:text-white transition-colors" title="Full Screen Canvas">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Main Visual Stream Canvas Container -->
+<div class="flex-1 relative bg-black flex items-center justify-center overflow-hidden select-none">
+<!-- Live Optical Component Image -->
+<div class="relative w-full h-full flex items-center justify-center">
+<img alt="Aerospace turbine flange precision optical inspection" class="object-cover w-full h-full filter contrast-125 brightness-95" src="https://lh3.googleusercontent.com/aida/AEtjO1Ue-mWgej8-1qo-4v9b2nAS2K2EVklH02JIA3xq4Bqq8mY-Z43Vi1lkU2SPzr2ko3tHyIM4Eq8fTyYk2sOKXqmo3N-2DbNYZdd5yJaMSnpL9LkEjQYQErs1vJbPavt0Rn5BeHbFOstfwSrhIgTTxggjjFaRnZI5BXytCtGq5DnztbXoUdeYfq8TzaS7XgwwCk-LH5KdMF277ecV3VFz6ixJNr-JMG0VXTjIu55o37P8FzvVMb42XroZKAEv"/>
+<!-- Synthetic HUD / Laser Coordinate Overlays -->
+<div class="absolute inset-0 pointer-events-none">
+<!-- Central Electric Cyan Reticle Lines -->
+<div class="absolute left-0 right-0 top-1/2 h-[1px] bg-cyan-neon/60 shadow-[0_0_8px_#00F0FF]"></div>
+<div class="absolute top-0 bottom-0 left-1/2 w-[1px] bg-cyan-neon/60 shadow-[0_0_8px_#00F0FF]"></div>
+<!-- Precision Reticle Concentric Guides -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border border-cyan-neon/40 flex items-center justify-center shadow-[0_0_15px_rgba(0,240,255,0.2)]">
+<div class="w-24 h-24 rounded-full border border-dashed border-cyan-neon/50"></div>
+</div>
+<!-- Optical HUD Header Telemetry Top Right -->
+<div class="absolute top-4 right-4 bg-black/90 backdrop-blur border border-border-hairline px-3 py-2 rounded font-mono text-[11px] text-text-secondary space-y-0.5 shadow-2xl">
+<div class="text-white font-bold flex items-center justify-between gap-4">
+<span>INSPECTION LOG: 14/09/23</span>
+<span class="w-1.5 h-1.5 rounded-full bg-cyan-neon shadow-[0_0_6px_#00F0FF]"></span>
+</div>
+<div>OP 86: FINISH BORE</div>
+<div>STATUS: <span class="text-cyan-neon font-bold">ACCEPT / RUNNING</span></div>
+<div class="text-cyan-bright">MEASUREMENTS: Ø9.528mm / pos.0.006mm</div>
+<div class="text-right text-[9px] text-text-muted">|--- 5mm ---|</div>
+</div>
+<!-- Interactive Defect Bounding Box Highlight Overlay -->
+<div class="absolute top-[44%] left-[46%] w-28 h-20 rounded bg-danger-accent/10 border border-danger-accent/40 shadow-[0_0_15px_rgba(239,68,68,0.35)] pointer-events-auto cursor-crosshair">
+<!-- Corner brackets -->
+<span class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-danger-accent"></span>
+<span class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-danger-accent"></span>
+<span class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-danger-accent"></span>
+<span class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-danger-accent"></span>
+<!-- Defect Tag Flag attached to corner -->
+<div class="absolute -top-7 left-0 bg-surface-dark border border-danger-accent/50 px-2 py-0.5 rounded shadow-lg flex items-center gap-1.5 whitespace-nowrap">
+<span class="w-2 h-2 rounded-full bg-danger-accent animate-pulse"></span>
+<span class="font-mono text-[10px] font-bold text-danger-accent uppercase">DEFECT #DF-01</span>
+<span class="font-mono text-[10px] text-white">SCRATCH (95.8%)</span>
+</div>
+<!-- Measurement Micro Callout -->
+<div class="absolute -bottom-8 left-0 bg-black/90 border border-border-hairline px-2 py-0.5 rounded font-mono text-[9px] text-cyan-neon whitespace-nowrap">
+X: 14.2mm | Y: 8.6mm | Depth: 0.08mm
+</div>
+</div>
+<!-- Optical Center Pitch Annotations -->
+<div class="absolute top-1/2 left-1/2 -translate-y-8 translate-x-4 bg-black/90 border border-border-hairline backdrop-blur px-2.5 py-1 rounded shadow-xl text-left font-mono">
+<div class="text-cyan-neon font-bold text-[11px] flex items-center gap-1">
+<span>Ø 9.53mm ± 0.012</span>
+</div>
+<div class="text-[10px] text-text-secondary leading-tight">
+Hole Pos: 0.008mm<br/><span class="text-cyan-bright">True Position Lock</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Heatmap Overlay Simulation Indicator -->
+<div class="absolute bottom-3 left-4 bg-black/90 border border-border-hairline backdrop-blur px-3 py-1.5 rounded flex items-center gap-3 font-mono text-[11px] z-10">
+<div class="flex items-center gap-1.5 text-white">
+<span class="w-2 h-2 rounded-full bg-cyan-neon shadow-[0_0_6px_#00F0FF]"></span>
+<span>Polarized Telecentric</span>
+</div>
+<div class="h-3 w-px bg-border-hairline"></div>
+<span class="text-text-muted">Grid Scale: 1px = 1.2μm</span>
+<div class="h-3 w-px bg-border-hairline"></div>
+<span class="text-cyan-bright font-semibold">ROT: 0.00° CALIBRATED</span>
+</div>
+</div>
+<!-- Below Viewer: Component & Sensor Lineage Metadata Bar -->
+<div class="h-12 px-space-md bg-surface-dark border-t border-border-hairline flex items-center justify-between shrink-0">
+<div class="flex items-center gap-space-lg text-[11px]">
+<div>
+<span class="text-text-muted">Serial:</span>
+<span class="font-mono text-white font-semibold ml-1">#FLG-99432</span>
+</div>
+<div class="h-3 w-px bg-border-hairline"></div>
+<div>
+<span class="text-text-muted">Alloy:</span>
+<span class="text-white font-medium ml-1">Ti-6Al-4V Grade 5 Titanium</span>
+</div>
+<div class="h-3 w-px bg-border-hairline"></div>
+<div>
+<span class="text-text-muted">Station:</span>
+<span class="text-white font-medium ml-1">Rig 04 (Cleanroom 4)</span>
+</div>
+<div class="h-3 w-px bg-border-hairline"></div>
+<div>
+<span class="text-text-muted">Camera:</span>
+<span class="text-white font-medium ml-1">48MP Polarized Macro</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md font-mono text-[11px] text-text-muted">
+<span>EXP: 1/800s</span>
+<span>GAIN: 2.1dB</span>
+<span class="px-1.5 py-0.5 rounded bg-surface border border-cyan-neon/30 text-cyan-neon font-semibold">PASS_RING_TEST</span>
+</div>
+</div>
+</div>
+<!-- COLUMN 3: Right Panel - Segregated Evaluation System (3 cols) -->
+<div class="col-span-3 flex flex-col bg-surface-dark overflow-hidden z-10">
+<!-- EVALUATION SUB-PANEL 1: AI / Machine Suggestion (Stark High-Contrast Dark Card) -->
+<div class="p-space-md bg-surface border-b border-border-hairline relative flex flex-col gap-space-sm shrink-0">
+<!-- Header Tag with distinct AI indicator -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded bg-cyan-dim border border-cyan-neon/40 text-cyan-neon flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">neurology</span>
+</span>
+<div>
+<div class="font-mono text-[10px] text-cyan-bright uppercase font-bold tracking-wider">AI Inference Engine</div>
+<div class="font-semibold text-[14px] text-white leading-none">Machine Suggestion</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-dark border border-border-hairline text-cyan-neon font-mono text-[10px] font-semibold">
+v1.2.0-TensorRT
+</span>
+</div>
+<!-- Suggestion Card Body -->
+<div class="p-space-sm rounded bg-surface-dark border border-border-hairline space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-mono text-[10px] text-text-muted uppercase">Classified Anomaly</span>
+<span class="px-2 py-0.5 rounded bg-danger-dim border border-danger-accent/50 text-danger-accent font-mono text-[12px] font-bold tracking-wide">
+SURFACE SCRATCH
+</span>
+</div>
+<!-- Model & Confidence Bar -->
+<div class="space-y-1 pt-1">
+<div class="flex justify-between font-mono text-[11px]">
+<span class="text-text-secondary">Inference Confidence:</span>
+<span class="text-cyan-neon font-bold">95.8% (HIGH)</span>
+</div>
+<div class="w-full bg-surface-panel h-2 rounded overflow-hidden p-0.5 border border-border-hairline">
+<div class="bg-cyan-neon h-full rounded shadow-[0_0_8px_#00F0FF] transition-all duration-500" style="width: 95.8%;"></div>
+</div>
+</div>
+<!-- Diagnostic Metrics Matrix -->
+<div class="grid grid-cols-2 gap-2 pt-1 font-mono text-[11px]">
+<div class="bg-surface p-2 rounded border border-border-hairline">
+<div class="text-text-muted text-[10px]">SEVERITY INDEX</div>
+<div class="text-danger-accent font-bold text-[16px]">0.0425</div>
+<div class="text-[9px] text-text-muted">Threshold: 0.0350</div>
+</div>
+<div class="bg-surface p-2 rounded border border-border-hairline">
+<div class="text-text-muted text-[10px]">EDGE LATENCY</div>
+<div class="text-cyan-neon font-bold text-[16px]">2.4 ms</div>
+<div class="text-[9px] text-text-muted">Jetson Orin 64GB</div>
+</div>
+</div>
+<div class="text-[11px] text-text-secondary flex items-start gap-1.5 pt-1">
+<span class="material-symbols-outlined text-text-muted text-[16px] shrink-0">model_training</span>
+<span>ResNet-101 FP16 weights trained on 142k aerospace flange micrographs.</span>
+</div>
+</div>
+<!-- Mandatory Enterprise Human-in-the-Loop Safeguard Notice -->
+<div class="px-space-sm py-1.5 rounded bg-surface-dark border border-cyan-neon/30 flex items-center gap-2">
+<span class="material-symbols-outlined text-cyan-neon text-[16px]">gavel</span>
+<span class="font-mono text-[10px] text-text-secondary">
+AI Suggestion only — Requires authorized human sign-off
+</span>
+</div>
+</div>
+<!-- EVALUATION SUB-PANEL 2: Human Verification Zone -->
+<div class="flex-1 p-space-md bg-workspace-bg flex flex-col justify-between overflow-y-auto">
+<div class="space-y-space-md">
+<!-- Human Inspector Credential Line -->
+<div class="flex items-center justify-between pb-2 border-b border-border-hairline">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded bg-surface border border-border-hairline text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</span>
+<div>
+<div class="font-mono text-[10px] text-text-muted uppercase font-bold tracking-wider">Human Verification Gate</div>
+<div class="font-semibold text-[14px] text-white leading-none">Inspector Disposition</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-[12px] text-white font-semibold">Mike Vance</div>
+<div class="font-mono text-[10px] text-text-muted">Badge #QA-4491</div>
+</div>
+</div>
+<!-- Bold Decision Triage Selector Buttons -->
+<div class="space-y-1.5">
+<div class="font-mono text-[10px] text-text-muted uppercase font-semibold">Inspection Disposition *</div>
+<div class="grid grid-cols-1 gap-1.5">
+<!-- Confirm Defect Button -->
+<button class="w-full px-space-md py-2.5 rounded bg-danger-dim border border-danger-accent text-danger-accent hover:bg-danger-accent hover:text-white font-semibold text-[13px] flex items-center justify-between shadow-[0_0_12px_rgba(239,68,68,0.15)] transition-all" id="btn-confirm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Confirm Defect</span>
+</div>
+<span class="font-mono text-[10px] px-1.5 py-0.5 rounded bg-black/40 border border-danger-accent/40">[Key: 1]</span>
+</button>
+<div class="grid grid-cols-2 gap-1.5">
+<!-- Reject / False Positive -->
+<button class="px-space-sm py-2 rounded bg-surface hover:bg-surface-panel border border-border-hairline text-white font-medium text-[12px] flex items-center justify-center gap-1.5 transition-all" id="btn-reject">
+<span class="material-symbols-outlined text-text-muted text-[16px]">close</span>
+<span>False Positive</span>
+</button>
+<!-- Rescan Request -->
+<button class="px-space-sm py-2 rounded bg-surface hover:bg-surface-panel border border-border-hairline text-white font-medium text-[12px] flex items-center justify-center gap-1.5 transition-all" id="btn-rescan">
+<span class="material-symbols-outlined text-text-muted text-[16px]">replay</span>
+<span>Request Rescan</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Classification Override & Severity Matrix -->
+<div class="space-y-space-sm">
+<div>
+<label class="block font-mono text-[10px] text-text-muted uppercase mb-1">Confirmed Classification</label>
+<div class="relative">
+<select class="w-full h-8 px-2 bg-surface text-white border border-border-hairline rounded font-sans text-[12px] appearance-none focus:outline-none focus:border-cyan-neon cursor-pointer">
+<option selected="">Scratch (Linear Abrasion)</option>
+<option>Porosity / Cavitation</option>
+<option>Tool Chatter Mark</option>
+<option>Dimensional Tolerance Breach</option>
+<option>Inclusion / Foreign Particulate</option>
+<option>Corrosion / Chemical Discoloration</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-text-muted pointer-events-none text-[16px]">expand_more</span>
+</div>
+</div>
+<!-- Severity Pills -->
+<div>
+<label class="block font-mono text-[10px] text-text-muted uppercase mb-1">Assigned Severity</label>
+<div class="grid grid-cols-3 gap-1 font-mono text-[10px]">
+<button class="py-1 rounded bg-surface border border-border-hairline text-text-muted hover:text-white transition-colors">Minor</button>
+<button class="py-1 rounded bg-danger-dim border border-danger-accent/60 text-danger-accent font-bold">Major (Active)</button>
+<button class="py-1 rounded bg-surface border border-border-hairline text-text-muted hover:text-white transition-colors">Critical Hold</button>
+</div>
+</div>
+<!-- Corrective Action Auto-ticket checkbox -->
+<label class="flex items-center gap-2 cursor-pointer pt-1">
+<input checked="" class="w-3.5 h-3.5 rounded bg-surface border border-border-hairline text-cyan-neon focus:ring-0" type="checkbox"/>
+<span class="text-[11px] text-text-secondary select-none">Auto-open NCR (Non-Conformance) ticket</span>
+</label>
+<!-- Human Inspector Log Notes -->
+<div>
+<label class="block font-mono text-[10px] text-text-muted uppercase mb-1">Inspector Sign-off Note</label>
+<textarea class="w-full bg-surface border border-border-hairline rounded p-2 text-white font-sans text-[11px] placeholder:text-text-muted focus:outline-none focus:border-cyan-neon resize-none" placeholder="Enter micro-observations..." rows="2">Verified longitudinal tool chatter mark on sealing face. Exceeds Ra 0.05um tolerance threshold.</textarea>
+</div>
+</div>
+</div>
+<!-- Submit & Advance Action Container -->
+<div class="pt-space-md mt-2 space-y-1.5 shrink-0 border-t border-border-hairline">
+<button class="w-full py-2.5 px-space-lg rounded bg-white hover:bg-cyan-neon text-black font-bold text-[13px] flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all duration-150 active:scale-[0.98]" id="btn-submit">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+<span>Submit Verification &amp; Next Item</span>
+<span class="font-mono text-[10px] bg-black/10 px-1.5 py-0.5 rounded font-normal">↵ Enter</span>
+</button>
+<div class="flex items-center justify-between text-[9px] text-text-muted font-mono px-1">
+<span>AUDIT HASH: 8a9f...41e</span>
+<span class="text-cyan-bright">21 CFR PART 11 COMPLIANT</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Workstation Control Scripts -->
+<script>
+  (function initReviewStation() {
+    // Session Timer logic
+    const timerElem = document.getElementById('session-timer');
+    let totalSeconds = 1122; // 00:18:42
+    setInterval(() => {
+      totalSeconds++;
+      const hrs = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+      const mins = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+      const secs = String(totalSeconds % 60).padStart(2, '0');
+      if (timerElem) timerElem.textContent = `${hrs}:${mins}:${secs}`;
+    }, 1000);
+
+    // Zoom and Viewer Toggles
+    const toggleHeatmap = document.getElementById('toggle-heatmap');
+    if (toggleHeatmap) {
+      toggleHeatmap.addEventListener('click', () => {
+        toggleHeatmap.classList.toggle('border-cyan-neon');
+        toggleHeatmap.classList.toggle('text-cyan-neon');
+      });
+    }
+
+    const toggleReticle = document.getElementById('toggle-reticle');
+    if (toggleReticle) {
+      toggleReticle.addEventListener('click', () => {
+        toggleReticle.classList.toggle('opacity-40');
+      });
+    }
+
+    // Submit Micro-interaction
+    const submitBtn = document.getElementById('btn-submit');
+    if (submitBtn) {
+      submitBtn.addEventListener('click', () => {
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[18px]">autorenew</span><span>Logging to Audit Trail...</span>`;
+        submitBtn.classList.add('opacity-80');
+        setTimeout(() => {
+          submitBtn.innerHTML = `<span class="material-symbols-outlined text-[18px]">check</span><span>Disposition Committed! Loading Next...</span>`;
+          submitBtn.classList.remove('opacity-80');
+          setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+          }, 1000);
+        }, 600);
+      });
+    }
+
+    // Keyboard Shortcuts (Enter to submit, 1 to Confirm Defect)
+    window.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') {
+        return;
+      }
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        submitBtn && submitBtn.click();
+      }
+      if (e.key === '1') {
+        const confirmBtn = document.getElementById('btn-confirm');
+        confirmBtn && confirmBtn.click();
+      }
+    });
+  })();
+</script></main></div></body></html>

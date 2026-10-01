@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: {
+  surface: "#FFFFFF",
+  "surface-dim": "#F1F5F9",
+  "surface-container-lowest": "#FFFFFF",
+  "surface-container-low": "#F8FAFC",
+  "surface-container": "#FFFFFF",
+  "surface-container-high": "#F1F5F9",
+  "surface-container-highest": "#E2E8F0",
+  "surface-bright": "#FFFFFF",
+  "on-surface": "#0F172A",
+  "on-surface-variant": "#475569",
+  "on-background": "#0F172A",
+  background: "#F8FAFC",
+  outline: "#94A3B8",
+  "outline-variant": "#E2E8F0",
+  primary: "#0284C7",
+  "primary-container": "#E0F2FE",
+  "on-primary": "#FFFFFF",
+  "on-primary-container": "#0369A1",
+  "primary-fixed": "#E0F2FE",
+  "primary-fixed-dim": "#BAE6FD",
+  secondary: "#0284C7",
+  "secondary-container": "#E0F2FE",
+  "on-secondary": "#FFFFFF",
+  "on-secondary-container": "#075985",
+  tertiary: "#D97706",
+  "tertiary-container": "#FEF3C7",
+  "on-tertiary": "#FFFFFF",
+  "on-tertiary-container": "#92400E",
+  error: "#DC2626",
+  "error-container": "#FEE2E2",
+  "on-error": "#FFFFFF",
+  "on-error-container": "#991B1B"
+}, borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" }, spacing: { "space-md": "0.75rem", margin: "1rem", "space-lg": "1rem", "space-xl": "1.5rem", gutter: "0.75rem", "space-sm": "0.375rem", "space-xs": "0.25rem" }, fontFamily: { sans: ["Inter", "sans-serif"], mono: ["JetBrains Mono", "monospace"], "body-lg": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "headline-xl": ["Inter"], "headline-sm": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"] }, fontSize: { "body-lg": ["15px", { lineHeight: "22px", letterSpacing: "0em", fontWeight: "400" }], "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "body-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400" }], "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }], "body-md": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "400" }] } } } };</script></head><body class="bg-[#F8FAFC] font-body-md text-slate-900 antialiased selection:bg-sky-500 selection:text-white min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-white z-50 flex flex-col border-r border-slate-200 select-none shadow-sm"><div class="h-14 px-space-lg flex items-center justify-between border-b border-slate-200 bg-slate-50/70"><div class="flex items-center gap-space-sm min-w-0"><img alt="ApexVision Logo" class="h-8 w-8 rounded-sm object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XeO3qxc0W6srOqj69jZu5DGgTtxWYzghzggFTRKMHLmFigDZNBPmKthbkUsnwRJqD4oYJqYcu31Xblt6LQ8thczVA0uuZsKixYXG4Y-RnZphyUiwGAFjJ6XUqO2PnRoN7MchqpfVDLUtPnJ7w6QC54E33QpxsnVuP1d853rbwG5RRXm-Kt85_cu2y57H5pBl0DN75_dE8OfHhrMXaSBsMCl2Zr4WV-i8uLTN0raxCBCpj9s-rmWTW8xwBo"/><span class="font-headline-sm text-headline-sm text-slate-900 tracking-tight truncate font-semibold">ApexVision</span></div><span class="px-space-xs py-0.5 rounded bg-sky-50 text-sky-700 font-label-sm text-label-sm border border-sky-200 font-mono shrink-0">v2.4 Enterprise</span></div><div class="flex-1 overflow-y-auto px-space-md py-space-md space-y-space-md"><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-slate-400 font-semibold">PRIMARY</div><nav class="space-y-0.5"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs rounded transition-colors bg-sky-50 text-sky-700 border border-sky-200 font-medium" data-path="executive-dashboard" href="#"><span class="material-symbols-outlined text-[18px] text-sky-600">dashboard</span><span class="text-sky-900 font-semibold">Executive Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-body-md text-body-md" data-path="products-and-batches" href="#"><span class="material-symbols-outlined text-[18px] text-slate-400">inventory_2</span><span>Products &amp; Batches</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-body-md text-body-md" data-path="defect-register" href="#"><span class="material-symbols-outlined text-[18px] text-slate-400">flag</span><span>Defect Register</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-slate-400 font-semibold">OPERATIONS</div><nav class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-body-md text-body-md" data-path="inspection-intake" href="#"><span class="material-symbols-outlined text-[18px] text-slate-400">input</span><span>Inspection Intake</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-body-md text-body-md" data-path="review-station" href="#"><span class="material-symbols-outlined text-[18px] text-slate-400">biotech</span><span>Review Station</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-body-md text-body-md" data-path="reinspection" href="#"><span class="material-symbols-outlined text-[18px] text-slate-400">replay</span><span>Reinspection</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-body-md text-body-md" data-path="batch-release-gate" href="#"><span class="material-symbols-outlined text-[18px] text-slate-400">verified</span><span>Batch Release Gate</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-slate-400 font-semibold">INTELLIGENCE</div><nav class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-body-md text-body-md" data-path="grounded-genai-copilot" href="#"><span class="material-symbols-outlined text-[18px] text-slate-400">neurology</span><span>Grounded GenAI Copilot</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-body-md text-body-md" data-path="ml-evaluation-suite" href="#"><span class="material-symbols-outlined text-[18px] text-slate-400">analytics</span><span>ML Evaluation Suite</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-body-md text-body-md" data-path="smart-triage-innovation" href="#"><span class="material-symbols-outlined text-[18px] text-slate-400">auto_awesome</span><span>Smart Triage Innovation</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-slate-400 font-semibold">SYSTEM</div><nav class="space-y-0.5"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-body-md text-body-md" data-path="audit-trail" href="#"><span class="material-symbols-outlined text-[18px] text-slate-400">history_edu</span><span>Audit Trail</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-body-md text-body-md" data-path="settings-and-role-matrix" href="#"><span class="material-symbols-outlined text-[18px] text-slate-400">tune</span><span>Settings &amp; Role Matrix</span></a></nav></div></div><div class="border-t border-slate-200 bg-slate-50/70 p-space-md space-y-space-sm"><div class="p-space-xs rounded bg-white border border-slate-200 shadow-sm space-y-1"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-slate-700 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Edge Node 04</span><span class="font-label-sm text-label-sm text-emerald-700 font-medium font-mono">Operational</span></div><div class="flex items-center justify-between font-label-sm text-label-sm text-slate-500 font-mono"><span>Uptime: 99.98%</span><span>Latency: 2.4ms</span></div></div><div class="flex items-center gap-space-sm pt-space-xs"><img alt="Inspector Mike Vance" class="w-8 h-8 rounded-full border border-slate-300 object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XoMozUk4S-02F-rMzotxnSMYU2PEyQvgT3GaywosFQwEpSG5Gr6OweazMZ0NQdq17axZ7idUf4ZWMdTl5bTulJ8HJZ0O24_Bm8q3lHK296BQbvVplYpkV1QYQ-vPhC34JLocsXRxOKVch8S3pMiKcum2O4ZZFzeJ-RFLvNNLSpPakNrKKzW8e0Nml4eODzBhRiCx2yBial5zlFdXSXRL6Ilz9D36mnIYtFr_aEPojK1K4JzBHfN6mtyOU"/><div class="min-w-0 flex-1"><div class="font-body-md text-body-md text-slate-900 font-semibold truncate">Mike Vance</div><div class="font-label-sm text-label-sm text-slate-500 truncate">Lead Inspector • Cleanroom 4</div></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen bg-[#F8FAFC]"><header class="fixed top-0 left-72 right-0 h-14 bg-white/95 backdrop-blur-md border-b border-slate-200 z-40 px-space-lg flex items-center justify-between shadow-sm"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-md text-label-md text-slate-500"><span class="font-semibold text-slate-800">Terminal 04</span><span class="material-symbols-outlined text-[14px] text-slate-400">chevron_right</span><span class="text-sky-700 font-medium">AOI Real-Time Telemetry</span><span class="material-symbols-outlined text-[14px] text-slate-400">chevron_right</span><span class="px-space-xs py-0.5 rounded bg-sky-50 font-label-sm text-label-sm text-sky-700 border border-sky-200 font-mono font-medium">LINE A-ACTIVE</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-slate-400 text-[16px]">search</span><input class="h-8 pl-8 pr-12 rounded bg-slate-50 border border-slate-200 text-slate-800 placeholder:text-slate-400 font-body-sm text-body-sm focus:outline-none focus:border-sky-500 focus:bg-white w-64 transition-all" placeholder="Search telemetry, batches, defects..." type="text"/><span class="absolute right-2 px-1 rounded bg-slate-100 text-slate-500 font-label-sm text-label-sm border border-slate-200 font-mono">⌘K</span></div><div class="relative cursor-pointer"><button class="h-8 w-8 rounded bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">notifications</span></button><span class="absolute -top-1 -right-1 px-1 py-0.2 rounded-full bg-rose-600 text-white font-label-sm text-label-sm font-semibold border border-white">3</span></div><div class="relative"><button class="h-8 px-space-sm rounded bg-sky-50 border border-sky-200 flex items-center gap-1.5 text-sky-900 hover:border-sky-300 transition-colors shadow-sm"><span class="w-2 h-2 rounded-full bg-sky-600"></span><span class="font-label-md text-label-md font-semibold text-sky-800">Role: Inspector</span><span class="material-symbols-outlined text-sky-700 text-[14px]">arrow_drop_down</span></button></div><div class="h-4 w-px bg-slate-200"></div><div class="flex items-center gap-space-sm"><div class="relative"><img alt="User avatar" class="w-8 h-8 rounded-full border border-sky-500/60 object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1XoMozUk4S-02F-rMzotxnSMYU2PEyQvgT3GaywosFQwEpSG5Gr6OweazMZ0NQdq17axZ7idUf4ZWMdTl5bTulJ8HJZ0O24_Bm8q3lHK296BQbvVplYpkV1QYQ-vPhC34JLocsXRxOKVch8S3pMiKcum2O4ZZFzeJ-RFLvNNLSpPakNrKKzW8e0Nml4eODzBhRiCx2yBial5zlFdXSXRL6Ilz9D36mnIYtFr_aEPojK1K4JzBHfN6mtyOU"/><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-white"></span></div></div></div></header><main class="flex-1 pt-14 w-full bg-[#F8FAFC]"><div class="flex flex-col w-full">
+<div class="p-space-lg space-y-space-md max-w-[1720px] mx-auto w-full">
+<!-- Top Action & Terminal Status Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-xs">
+<div>
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-slate-900 font-bold tracking-tight">Executive Quality Intelligence</h1>
+<span class="px-space-xs py-0.5 rounded bg-sky-50 text-sky-700 font-label-sm text-label-sm border border-sky-200 flex items-center gap-1.5 font-mono font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-600 animate-ping"></span>
+            AOI TELEMETRY ACTIVE
+          </span>
+<span class="px-space-xs py-0.5 rounded bg-white font-label-sm text-label-sm text-slate-600 border border-slate-200 font-mono shadow-sm">
+            STATION 04 • CLEANROOM ALPHA
+          </span>
+</div>
+<p class="font-body-md text-body-md text-slate-500 mt-0.5">Real-time optical metrology, automated defect classification, and batch integrity audit stream.</p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="flex items-center bg-white p-1 rounded border border-slate-200 shadow-sm">
+<span class="font-label-sm text-label-sm text-slate-500 px-2 font-mono">CYCLE SPEED: 1.84s/pc</span>
+<div class="h-3 w-px bg-slate-200"></div>
+<span class="font-label-sm text-label-sm text-sky-700 px-2 font-mono font-semibold">YIELD: 98.4%</span>
+</div>
+<button class="h-8 px-space-md rounded bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-label-md text-label-md flex items-center gap-1.5 transition-all shadow-sm" id="calibBtn" onclick="triggerCalibration()">
+<span class="material-symbols-outlined text-[16px] text-sky-600" id="calibIcon">tune</span>
+<span id="calibLabel">Trigger Fast Calibration</span>
+</button>
+<button class="h-8 px-space-md rounded bg-sky-600 hover:bg-sky-700 text-white font-semibold font-label-md text-label-md flex items-center gap-1.5 transition-all shadow-sm" onclick="exportReport()">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export ISO-9001 Report</span>
+</button>
+</div>
+</div>
+<!-- 5 Top KPI Telemetry Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-sm">
+<!-- KPI 1: Inspected Items -->
+<div class="bg-white rounded p-space-md border border-slate-200 shadow-sm relative overflow-hidden group hover:border-sky-400 transition-colors">
+<div class="flex items-center justify-between text-slate-500">
+<span class="font-label-sm text-label-sm tracking-wider uppercase font-semibold text-slate-500">Inspected Items</span>
+<span class="material-symbols-outlined text-sky-600 text-[18px]">verified</span>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-slate-900 font-mono font-bold tracking-tight">428<span class="text-slate-400 text-headline-sm font-normal"> / 500</span></span>
+<span class="font-label-sm text-label-sm text-sky-700 bg-sky-50 px-1.5 py-0.5 rounded border border-sky-200 font-mono font-semibold">+166.7%</span>
+</div>
+<div class="mt-3 flex items-center justify-between text-body-sm text-slate-500 font-label-sm">
+<span>Batch B-101 target</span>
+<span class="text-slate-800 font-mono font-medium">85.6% Completed</span>
+</div>
+<!-- Mini Sparkline inline SVG -->
+<div class="mt-2 h-7 w-full">
+<svg class="w-full h-full text-sky-600 stroke-current fill-none" preserveaspectratio="none" viewbox="0 0 100 24">
+<path d="M0,20 L15,18 L30,21 L45,13 L60,14 L75,8 L90,11 L100,4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></path>
+<polygon class="fill-sky-100" points="0,20 15,18 30,21 45,13 60,14 75,8 90,11 100,4 100,24 0,24"></polygon>
+</svg>
+</div>
+</div>
+<!-- KPI 2: Pending Reviews -->
+<div class="bg-white rounded p-space-md border border-slate-200 shadow-sm relative overflow-hidden group hover:border-amber-400 transition-colors">
+<div class="flex items-center justify-between text-slate-500">
+<span class="font-label-sm text-label-sm tracking-wider uppercase font-semibold text-slate-500">Pending Reviews</span>
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-amber-600 font-mono font-bold tracking-tight">3</span>
+<span class="font-label-sm text-label-sm text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 font-mono font-medium">Needs Review</span>
+</div>
+<div class="mt-3 flex items-center justify-between text-body-sm font-label-sm text-slate-500">
+<span>Awaiting Inspector verification</span>
+<span class="text-amber-700 font-mono font-medium">Avg wait 8m</span>
+</div>
+<div class="mt-3 w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-amber-500 h-1.5 rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+<!-- KPI 3: Confirmed Defects -->
+<div class="bg-white rounded p-space-md border border-slate-200 shadow-sm relative overflow-hidden group hover:border-rose-400 transition-colors">
+<div class="flex items-center justify-between text-slate-500">
+<span class="font-label-sm text-label-sm tracking-wider uppercase font-semibold text-slate-500">Confirmed Defects</span>
+<span class="material-symbols-outlined text-rose-600 text-[18px]">gpp_bad</span>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-rose-600 font-mono font-bold tracking-tight">7</span>
+<span class="font-label-sm text-label-sm text-rose-700 bg-rose-50 px-1.5 py-0.5 rounded border border-rose-200 font-mono font-semibold">1.6% Defect</span>
+</div>
+<div class="mt-3 flex items-center justify-between text-body-sm font-label-sm text-slate-500">
+<span>Tolerance violation score</span>
+<span class="text-slate-800 font-mono">Crit: 2 | Maj: 5</span>
+</div>
+<!-- Sparkline mini -->
+<div class="mt-2 h-7 w-full">
+<svg class="w-full h-full text-rose-600 stroke-current fill-none" preserveaspectratio="none" viewbox="0 0 100 24">
+<path d="M0,22 L20,20 L35,21 L50,15 L65,19 L80,10 L100,8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></path>
+<polygon class="fill-rose-100" points="0,22 20,20 35,21 50,15 65,19 80,10 100,8 100,24 0,24"></polygon>
+</svg>
+</div>
+</div>
+<!-- KPI 4: Open Actions -->
+<div class="bg-white rounded p-space-md border border-slate-200 shadow-sm relative overflow-hidden group hover:border-sky-400 transition-colors">
+<div class="flex items-center justify-between text-slate-500">
+<span class="font-label-sm text-label-sm tracking-wider uppercase font-semibold text-slate-500">Open Actions</span>
+<span class="material-symbols-outlined text-sky-600 text-[18px]">assignment_late</span>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-slate-900 font-mono font-bold tracking-tight">2</span>
+<span class="font-label-sm text-label-sm text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 font-mono font-medium">1 High Pri</span>
+</div>
+<div class="mt-3 flex items-center justify-between text-body-sm font-label-sm text-slate-500">
+<span>Supervisor assigned</span>
+<span class="text-sky-700 font-mono font-medium">CA-42 (Lead)</span>
+</div>
+<div class="mt-3 flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded bg-rose-500"></span>
+<span class="w-2.5 h-2.5 rounded bg-amber-500"></span>
+<span class="w-2.5 h-2.5 rounded bg-slate-300"></span>
+<span class="w-2.5 h-2.5 rounded bg-slate-300"></span>
+<span class="text-slate-500 font-label-sm text-label-sm ml-auto font-mono">2 In-Flight</span>
+</div>
+</div>
+<!-- KPI 5: Batch Status -->
+<div class="bg-white rounded p-space-md border border-slate-200 shadow-sm relative overflow-hidden group hover:border-sky-400 transition-colors">
+<div class="flex items-center justify-between text-slate-500">
+<span class="font-label-sm text-label-sm tracking-wider uppercase font-semibold text-slate-500">Batch Status</span>
+<span class="material-symbols-outlined text-sky-600 text-[18px]">fact_check</span>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm text-amber-700 font-mono font-bold tracking-tight flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-600 text-[18px]">pause_circle</span>
+            B-101 HOLD
+          </span>
+<span class="font-label-sm text-label-sm text-sky-700 bg-sky-50 px-1.5 py-0.5 rounded border border-sky-200 font-mono font-semibold">4 ACTIVE</span>
+</div>
+<div class="mt-3 flex items-center justify-between text-body-sm font-label-sm text-slate-500">
+<span>Line A: Flange TF1047A</span>
+<span class="text-slate-800 font-mono">Rev B QA Gate</span>
+</div>
+<div class="mt-3 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-slate-500">Cleanroom 4</span>
+<span class="text-emerald-700 font-mono flex items-center gap-1 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 3 lines nominal
+          </span>
+</div>
+</div>
+</div>
+<!-- Live Inspection Optical Stage Preview Banner (Visual Context) -->
+<div class="bg-white rounded border border-slate-200 overflow-hidden shadow-sm flex flex-col md:flex-row items-stretch">
+<div class="relative w-full md:w-80 h-36 md:h-auto shrink-0 bg-slate-900 overflow-hidden">
+<img alt="Optical Inspection" class="w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida/AEtjO1Ue-mWgej8-1qo-4v9b2nAS2K2EVklH02JIA3xq4Bqq8mY-Z43Vi1lkU2SPzr2ko3tHyIM4Eq8fTyYk2sOKXqmo3N-2DbNYZdd5yJaMSnpL9LkEjQYQErs1vJbPavt0Rn5BeHbFOstfwSrhIgTTxggjjFaRnZI5BXytCtGq5DnztbXoUdeYfq8TzaS7XgwwCk-LH5KdMF277ecV3VFz6ixJNr-JMG0VXTjIu55o37P8FzvVMb42XroZKAEv"/>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/40 md:block hidden"></div>
+<div class="absolute top-2 left-2 bg-slate-900/90 backdrop-blur px-2 py-0.5 rounded border border-slate-700 font-label-sm text-label-sm text-white flex items-center gap-1 font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+          FEED: CAM-AOI-01
+        </div>
+<div class="absolute bottom-2 left-2 bg-slate-900/90 px-2 py-0.5 rounded border border-slate-700 font-label-sm text-label-sm font-mono text-slate-300">
+          TF1047A REV B • OP 86
+        </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between bg-white">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs border-b border-slate-200 pb-space-xs">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-500 font-semibold">Active Optical Unit Telemetry</span>
+<div class="font-headline-sm text-headline-sm text-slate-900 font-semibold flex items-center gap-2">
+<span>Machined Flange Assembly TF1047A</span>
+<span class="px-1.5 py-0.5 rounded bg-rose-50 text-rose-700 font-mono text-label-sm border border-rose-200 font-medium">FLAGGED: SCRATCH CA-42</span>
+</div>
+</div>
+<div class="flex items-center gap-2 font-mono font-label-sm text-label-sm text-slate-600">
+<span>Laser Datum: <b class="text-slate-900">Ø 9.53mm ± 0.012</b></span>
+<span>•</span>
+<span>Hole Pos: <b class="text-sky-700 font-semibold">0.008mm TP</b></span>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-xs text-body-sm">
+<div>
+<div class="text-slate-500 font-label-sm text-label-sm uppercase font-semibold">ILLUMINATION</div>
+<div class="text-slate-900 font-mono font-medium">Polarized Ring 480nm</div>
+</div>
+<div>
+<div class="text-slate-500 font-label-sm text-label-sm uppercase font-semibold">NEURAL MODEL</div>
+<div class="text-slate-900 font-mono font-medium">MetalDefect-ResNet v1.2</div>
+</div>
+<div>
+<div class="text-slate-500 font-label-sm text-label-sm uppercase font-semibold">DEFECT CLASS</div>
+<div class="text-rose-600 font-mono font-semibold">Surface Scratch (Major)</div>
+</div>
+<div class="flex items-center justify-end">
+<a class="h-7 px-space-sm rounded bg-sky-50 hover:bg-sky-100 text-sky-700 font-label-md text-label-md border border-sky-200 flex items-center gap-1 transition-colors font-medium shadow-sm" href="#">
+<span>Inspect Raw Frame</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Middle Section: Defect Trend (2/3) + Defect Category Breakdown (1/3) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- Left 2/3: Defect Trend & Shift Distribution -->
+<div class="lg:col-span-2 bg-white rounded p-space-md border border-slate-200 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-xs gap-space-xs border-b border-slate-200">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sky-600 text-[20px]">monitoring</span>
+<h2 class="font-headline-sm text-headline-sm text-slate-900 font-bold tracking-tight">Defect Trend &amp; Shift Distribution</h2>
+<span class="text-slate-500 font-label-sm text-label-sm font-mono">(Live PPM Telemetry)</span>
+</div>
+<!-- Timeframe Pills -->
+<div class="flex items-center bg-slate-100 rounded p-0.5 border border-slate-200 text-label-sm font-label-sm">
+<button class="tf-btn px-2.5 py-1 rounded bg-sky-600 text-white font-semibold transition-all font-mono shadow-xs" onclick="switchTimeframe('24h', this)">24h</button>
+<button class="tf-btn px-2.5 py-1 rounded text-slate-600 hover:text-slate-900 transition-all font-mono" onclick="switchTimeframe('7d', this)">7d</button>
+<button class="tf-btn px-2.5 py-1 rounded text-slate-600 hover:text-slate-900 transition-all font-mono" onclick="switchTimeframe('30d', this)">30d</button>
+</div>
+</div>
+<!-- Subheader / Legend -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs text-label-sm font-label-sm text-slate-600">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span> Critical Defect</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> Major Flaw</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span> Minor Scuff</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-0.5 bg-sky-600"></span> Tolerance Ceiling</span>
+</div>
+<span class="font-mono text-sky-700 font-medium">Current Shift: Shift 02 (14:00 - 22:00)</span>
+</div>
+</div>
+<!-- Inline Telemetry Graph -->
+<div class="py-space-md">
+<div class="relative w-full h-56 bg-slate-50 rounded border border-slate-200 p-space-sm flex flex-col justify-between">
+<!-- Grid Lines -->
+<div class="absolute inset-x-space-sm top-4 border-b border-slate-200 text-slate-400 text-[9px] font-mono flex justify-between"><span>25 PPM</span><span>CRITICAL THRESHOLD</span></div>
+<div class="absolute inset-x-space-sm top-16 border-b border-slate-200 text-slate-400 text-[9px] font-mono flex justify-between"><span>18 PPM</span><span>UPPER BOUND</span></div>
+<div class="absolute inset-x-space-sm top-28 border-b border-slate-200 text-slate-400 text-[9px] font-mono flex justify-between"><span>10 PPM</span><span>TARGET NOMINAL</span></div>
+<div class="absolute inset-x-space-sm top-40 border-b border-slate-200 text-slate-400 text-[9px] font-mono flex justify-between"><span>02 PPM</span><span>BASELINE</span></div>
+<!-- SVG Data Layer -->
+<svg class="w-full h-full relative z-10 overflow-visible" preserveaspectratio="none" viewbox="0 0 700 170">
+<defs>
+<lineargradient id="critGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#DC2626" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#DC2626" stop-opacity="0.02"></stop>
+</lineargradient>
+<lineargradient id="majGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#D97706" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#D97706" stop-opacity="0.01"></stop>
+</lineargradient>
+</defs>
+<!-- Tolerance dotted threshold line -->
+<line stroke="#0284C7" stroke-dasharray="4 4" stroke-opacity="0.9" stroke-width="1.5" x1="0" x2="700" y1="28" y2="28"></line>
+<!-- Area Fill Major -->
+<polygon fill="url(#majGrad)" points="0,140 70,135 140,110 210,125 280,85 350,95 420,60 490,105 560,90 630,75 700,65 700,165 0,165"></polygon>
+<!-- Minor Defect Wave -->
+<path d="M0,150 L70,145 L140,138 L210,142 L280,120 L350,130 L420,110 L490,130 L560,115 L630,105 L700,95" fill="none" stroke="#94A3B8" stroke-opacity="0.8" stroke-width="1.5"></path>
+<!-- Major Defect Wave -->
+<path d="M0,140 L70,135 L140,110 L210,125 L280,85 L350,95 L420,60 L490,105 L560,90 L630,75 L700,65" fill="none" stroke="#D97706" stroke-width="2"></path>
+<!-- Critical Defect Peak (Red) -->
+<polygon fill="url(#critGrad)" points="280,165 350,110 420,40 450,85 490,165"></polygon>
+<path d="M280,165 L350,110 L420,40 L450,85 L490,165" fill="none" stroke="#DC2626" stroke-width="2.25"></path>
+<!-- Data Markers -->
+<circle cx="420" cy="40" fill="#DC2626" r="4.5" stroke="#FFFFFF" stroke-width="2"></circle>
+<text fill="#B91C1C" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600" x="428" y="38">Peak @ 10:57 (Batch B-101 Spike)</text>
+<circle cx="630" cy="75" fill="#D97706" r="3.5" stroke="#FFFFFF" stroke-width="1.5"></circle>
+<circle cx="700" cy="65" fill="#0284C7" r="3.5" stroke="#FFFFFF" stroke-width="1.5"></circle>
+</svg>
+<!-- Shift Timeline Ticks -->
+<div class="flex items-center justify-between text-slate-500 font-label-sm text-label-sm font-mono pt-1">
+<span>06:00 (Shift 1)</span>
+<span>09:00</span>
+<span>12:00</span>
+<span class="text-amber-700 font-semibold">15:00 (Active Shift 2)</span>
+<span>18:00</span>
+<span>21:00</span>
+<span>00:00 (Shift 3)</span>
+</div>
+</div>
+</div>
+<!-- Footnote Status -->
+<div class="flex items-center justify-between font-label-sm text-label-sm text-slate-500 border-t border-slate-200 pt-space-xs font-mono">
+<span>AI Metrology Edge Inference: 42ms/frame • ResNet-50 v1.2</span>
+<span class="text-slate-800">Statistical Process Control: <b class="text-sky-700 font-semibold">Cpk 1.48 (Capable)</b></span>
+</div>
+</div>
+<!-- Right 1/3: Defect Category Breakdown -->
+<div class="bg-white rounded p-space-md border border-slate-200 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs border-b border-slate-200">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sky-600 text-[20px]">pie_chart</span>
+<h2 class="font-headline-sm text-headline-sm text-slate-900 font-bold tracking-tight">Defect Breakdown</h2>
+</div>
+<span class="font-label-sm text-label-sm text-slate-500 font-mono font-semibold">B-101 CUMULATIVE</span>
+</div>
+<!-- Donut Graphic Representation -->
+<div class="py-space-md flex flex-col items-center">
+<div class="relative w-44 h-44">
+<!-- SVG Donut Chart -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Track -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#F1F5F9" stroke-width="12"></circle>
+<!-- Scratch 42% (Perimeter = 2 * PI * 38 ≈ 238.76). 42% = 100.28 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#DC2626" stroke-dasharray="100.28 238.76" stroke-dashoffset="0" stroke-width="12"></circle>
+<!-- Porosity 26% = 62.07 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#D97706" stroke-dasharray="62.07 238.76" stroke-dashoffset="-100.28" stroke-width="12"></circle>
+<!-- Burr 18% = 42.97 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#0284C7" stroke-dasharray="42.97 238.76" stroke-dashoffset="-162.35" stroke-width="12"></circle>
+<!-- Dimensional 14% = 33.42 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#64748B" stroke-dasharray="33.42 238.76" stroke-dashoffset="-205.32" stroke-width="12"></circle>
+</svg>
+<!-- Center Text -->
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-headline-lg text-headline-lg font-mono text-slate-900 font-bold tracking-tight">100</span>
+<span class="font-label-sm text-label-sm text-slate-500 uppercase tracking-wider font-semibold">Total Flaws</span>
+</div>
+</div>
+</div>
+<!-- Detailed Legend Rows -->
+<div class="space-y-space-xs font-label-md text-label-md">
+<div class="flex items-center justify-between p-1.5 rounded bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-200">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-rose-500"></span>
+<span class="text-slate-900 font-medium">Surface Scratch</span>
+</div>
+<div class="flex items-center gap-2 font-mono">
+<span class="text-slate-500">42 instances</span>
+<span class="text-rose-600 font-semibold">42%</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-200">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-amber-500"></span>
+<span class="text-slate-900 font-medium">Micro Porosity</span>
+</div>
+<div class="flex items-center gap-2 font-mono">
+<span class="text-slate-500">26 instances</span>
+<span class="text-amber-700 font-semibold">26%</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-200">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-sky-600"></span>
+<span class="text-slate-900 font-medium">Machining Burr</span>
+</div>
+<div class="flex items-center gap-2 font-mono">
+<span class="text-slate-500">18 instances</span>
+<span class="text-sky-700 font-semibold">18%</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-200">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-slate-500"></span>
+<span class="text-slate-900 font-medium">Dimensional Deviation</span>
+</div>
+<div class="flex items-center gap-2 font-mono">
+<span class="text-slate-500">14 instances</span>
+<span class="text-slate-700 font-semibold">14%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-sm border-t border-slate-200 mt-space-sm flex items-center justify-between text-body-sm font-label-sm text-slate-500">
+<span>AI Detected vs Human Confirmed:</span>
+<span class="text-slate-900 font-mono font-medium">93 / 100 Match (93%)</span>
+</div>
+</div>
+</div>
+<!-- Lower Grid: Inspection Pipeline Health (Left) + Live Audit Stream (Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Inspection Pipeline Health (5 cols) -->
+<div class="lg:col-span-5 bg-white rounded p-space-md border border-slate-200 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs border-b border-slate-200">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sky-600 text-[20px]">speed</span>
+<h2 class="font-headline-sm text-headline-sm text-slate-900 font-bold tracking-tight">Inspection Pipeline Health</h2>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-emerald-50 text-emerald-700 font-label-sm text-label-sm border border-emerald-200 font-mono font-semibold">
+              OPERATIONAL
+            </span>
+</div>
+<div class="mt-space-md space-y-space-md">
+<!-- Meter 1: Reviewed & Confirmed -->
+<div class="space-y-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-sky-600"></span>
+<span class="text-slate-900 font-medium">Reviewed &amp; Confirmed</span>
+</div>
+<span class="font-mono text-sky-700 font-semibold">94.2%</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden border border-slate-200">
+<div class="bg-sky-600 h-2 rounded-full" style="width: 94.2%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-slate-500 font-mono">
+<span>403 units passed</span>
+<span>Target: &gt;92.0%</span>
+</div>
+</div>
+<!-- Meter 2: Pending Verification -->
+<div class="space-y-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span class="text-slate-900 font-medium">Pending Verification</span>
+</div>
+<span class="font-mono text-amber-700 font-semibold">4.8%</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden border border-slate-200">
+<div class="bg-amber-500 h-2 rounded-full" style="width: 4.8%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-slate-500 font-mono">
+<span>21 units in review queue</span>
+<span>SLA max: 6.0%</span>
+</div>
+</div>
+<!-- Meter 3: Reinspection Required -->
+<div class="space-y-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-slate-500"></span>
+<span class="text-slate-900 font-medium">Reinspection Required</span>
+</div>
+<span class="font-mono text-slate-700 font-semibold">0.8%</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden border border-slate-200">
+<div class="bg-slate-500 h-2 rounded-full" style="width: 0.8%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-slate-500 font-mono">
+<span>3 units flagged for second pass</span>
+<span>Rework Bay 02</span>
+</div>
+</div>
+<!-- Meter 4: Edge Processing Flaws -->
+<div class="space-y-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-slate-400"></span>
+<span class="text-slate-900 font-medium">Edge Processing Flaws</span>
+</div>
+<span class="font-mono text-slate-500 font-semibold">0.2%</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden border border-slate-200">
+<div class="bg-slate-400 h-2 rounded-full" style="width: 0.2%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-slate-500 font-mono">
+<span>1 dropped frame / sensor blur</span>
+<span>Zero hardware faults</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md p-space-sm rounded bg-slate-50 border border-slate-200 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sky-600 text-[20px]">high_quality</span>
+<div>
+<div class="font-label-md text-label-md text-slate-900 font-semibold">Overall Equipment Effectiveness (OEE)</div>
+<div class="font-label-sm text-label-sm text-slate-500 font-mono">Availability: 99.1% • Performance: 97.4%</div>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm text-sky-700 font-mono font-bold">96.5%</span>
+</div>
+</div>
+<!-- Live Audit & Event Timeline (7 cols) -->
+<div class="lg:col-span-7 bg-white rounded p-space-md border border-slate-200 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs border-b border-slate-200">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sky-600 text-[20px]">history_edu</span>
+<h2 class="font-headline-sm text-headline-sm text-slate-900 font-bold tracking-tight">Live Audit &amp; Event Timeline</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-sky-600 animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-slate-500 font-mono font-semibold">21 CFR PART 11 COMPLIANT</span>
+</div>
+</div>
+<!-- Chronological Stream -->
+<div class="mt-space-md relative pl-6 space-y-space-md before:absolute before:left-2 before:top-2 before:bottom-2 before:w-px before:bg-slate-200">
+<!-- Event 1: 11:15 AM (Elena Rostova) -->
+<div class="relative group">
+<div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-white border-2 border-amber-500 flex items-center justify-center shadow-xs">
+<div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
+</div>
+<div class="bg-slate-50 group-hover:bg-slate-100/70 p-space-sm rounded border border-slate-200 transition-all shadow-xs">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-slate-900 font-semibold">Elena Rostova</span>
+<span class="px-1.5 py-0.5 rounded bg-white text-slate-600 font-label-sm text-label-sm border border-slate-200">Quality Manager</span>
+</div>
+<span class="font-mono text-slate-500 font-label-sm text-label-sm">11:15 AM</span>
+</div>
+<p class="font-body-md text-body-md text-slate-800 mt-1">
+                  Placed <span class="font-mono font-semibold text-amber-700 bg-amber-50 px-1 rounded border border-amber-200">Batch B-101</span> on Quality Hold pending reinspection and root-cause verification with Machining Cell 03.
+                </p>
+<div class="mt-2 flex items-center gap-2 font-mono text-[11px] text-slate-500">
+<span class="flex items-center gap-1 text-slate-600"><span class="material-symbols-outlined text-[14px]">lock</span> Disposition: HOLD_SCRAP_RISK</span>
+<span>•</span>
+<span>Auth: E-SIGN_ER994</span>
+</div>
+</div>
+</div>
+<!-- Event 2: 11:02 AM (Mike Vance Confirm) -->
+<div class="relative group">
+<div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-white border-2 border-rose-500 flex items-center justify-center shadow-xs">
+<div class="w-1.5 h-1.5 rounded-full bg-rose-500"></div>
+</div>
+<div class="bg-slate-50 group-hover:bg-slate-100/70 p-space-sm rounded border border-slate-200 transition-all shadow-xs">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-slate-900 font-semibold">Mike Vance</span>
+<span class="px-1.5 py-0.5 rounded bg-white text-slate-600 font-label-sm text-label-sm border border-slate-200">Inspector (Lead)</span>
+</div>
+<span class="font-mono text-slate-500 font-label-sm text-label-sm">11:02 AM</span>
+</div>
+<p class="font-body-md text-body-md text-slate-800 mt-1">
+                  Confirmed <span class="font-mono font-semibold text-rose-600">DEF-101 (Major Scratch)</span> &amp; opened Corrective Action <span class="font-mono font-semibold text-sky-700 bg-sky-50 px-1 rounded border border-sky-200">CA-42</span>. Assigned to Tooling Maintenance.
+                </p>
+<div class="mt-2 flex items-center gap-2 font-mono text-[11px] text-slate-500">
+<span class="text-rose-600 font-medium">Deviation: 0.18mm Depth</span>
+<span>•</span>
+<span>Target: Cleanroom Tooling Station 02</span>
+</div>
+</div>
+</div>
+<!-- Event 3: 10:57 AM (Model AI Flag) -->
+<div class="relative group">
+<div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-white border-2 border-sky-600 flex items-center justify-center shadow-xs">
+<div class="w-1.5 h-1.5 rounded-full bg-sky-600"></div>
+</div>
+<div class="bg-slate-50 group-hover:bg-slate-100/70 p-space-sm rounded border border-slate-200 transition-all shadow-xs">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-sky-700 font-semibold font-mono">MetalDefectVision-ResNet v1.2</span>
+<span class="px-1.5 py-0.5 rounded bg-sky-50 text-sky-700 font-label-sm text-label-sm font-mono border border-sky-200">AI Inference</span>
+</div>
+<span class="font-mono text-slate-500 font-label-sm text-label-sm">10:57 AM</span>
+</div>
+<p class="font-body-md text-body-md text-slate-800 mt-1">
+                  AI Flagged Surface Scratch @ confidence score <span class="font-mono font-semibold text-sky-700">95.8%</span> on Flange Sealing Face (Sector 3).
+                </p>
+<div class="mt-2 flex items-center gap-2 font-mono text-[11px] text-slate-500">
+<span>Bounding Box: [x:412, y:288, w:84, h:12]</span>
+<span>•</span>
+<span>Inference Latency: 38ms</span>
+</div>
+</div>
+</div>
+<!-- Event 4: 10:57 AM (Mike Vance Intake) -->
+<div class="relative group">
+<div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-white border-2 border-slate-400 flex items-center justify-center shadow-xs">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-400"></div>
+</div>
+<div class="bg-slate-50 group-hover:bg-slate-100/70 p-space-sm rounded border border-slate-200 transition-all shadow-xs">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-slate-900 font-semibold">Mike Vance</span>
+<span class="px-1.5 py-0.5 rounded bg-white text-slate-600 font-label-sm text-label-sm border border-slate-200">Inspector (Lead)</span>
+</div>
+<span class="font-mono text-slate-500 font-label-sm text-label-sm">10:57 AM</span>
+</div>
+<p class="font-body-md text-body-md text-slate-800 mt-1">
+                  Uploaded high-res inspection optical capture for <span class="font-mono text-slate-900 font-semibold">Batch B-101 (Flange #42)</span> from Terminal 04 telecentric lens.
+                </p>
+<div class="mt-2 flex items-center gap-2 font-mono text-[11px] text-slate-500">
+<span>Raw TIFF: 4096x3072 px</span>
+<span>•</span>
+<span>Hash: 8a9f...c24e</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-sm border-t border-slate-200 mt-space-sm flex items-center justify-between text-body-sm font-label-sm">
+<span class="text-slate-500 font-mono">Showing last 4 telemetry events in active shift</span>
+<a class="text-sky-700 hover:text-sky-900 flex items-center gap-1 font-medium transition-colors" href="#">
+<span>View Full Audit Vault</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Collapsible Batch Registry Mini Table -->
+<div class="bg-white rounded border border-slate-200 shadow-sm overflow-hidden">
+<div class="p-space-md flex items-center justify-between border-b border-slate-200 bg-slate-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sky-600 text-[20px]">view_timeline</span>
+<span class="font-headline-sm text-headline-sm text-slate-900 font-bold">Active Production Batches on Inspection Floor</span>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-slate-500 font-mono">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>4 Live Conveyors Active</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="h-8 bg-slate-100 text-slate-600 font-label-sm text-label-sm uppercase tracking-wider border-b border-slate-200 font-mono">
+<th class="px-space-md py-1">Batch Code</th>
+<th class="px-space-md py-1 font-sans">Product Component</th>
+<th class="px-space-md py-1">Line / Station</th>
+<th class="px-space-md py-1">Sample Count</th>
+<th class="px-space-md py-1">Defect Yield</th>
+<th class="px-space-md py-1">Quality Gate</th>
+<th class="px-space-md py-1 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 text-slate-700 font-mono">
+<tr class="h-10 hover:bg-slate-50 transition-colors">
+<td class="px-space-md py-1 font-semibold text-amber-600">B-101</td>
+<td class="px-space-md py-1 font-sans text-slate-900 font-medium">Machined Flange TF1047A Rev B</td>
+<td class="px-space-md py-1 text-slate-600">Line A • Term 04</td>
+<td class="px-space-md py-1 text-slate-900">428 / 500</td>
+<td class="px-space-md py-1 text-rose-600 font-semibold">1.63% (Fail)</td>
+<td class="px-space-md py-1">
+<span class="px-2 py-0.5 rounded bg-amber-50 text-amber-700 font-label-sm text-label-sm border border-amber-200 font-semibold">QUALITY HOLD</span>
+</td>
+<td class="px-space-md py-1 text-right">
+<button class="h-6 px-2 rounded bg-white hover:bg-slate-50 text-sky-700 font-label-sm text-label-sm font-sans border border-sky-300 font-medium shadow-xs">Review Station</button>
+</td>
+</tr>
+<tr class="h-10 hover:bg-slate-50 transition-colors">
+<td class="px-space-md py-1 font-semibold text-sky-700">B-102</td>
+<td class="px-space-md py-1 font-sans text-slate-900 font-medium">Turbine Ring Impeller TR-88</td>
+<td class="px-space-md py-1 text-slate-600">Line B • Term 01</td>
+<td class="px-space-md py-1 text-slate-900">210 / 250</td>
+<td class="px-space-md py-1 text-emerald-700 font-semibold">0.12% (Nominal)</td>
+<td class="px-space-md py-1">
+<span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-label-sm text-label-sm border border-emerald-200 font-semibold">PASSING GATE</span>
+</td>
+<td class="px-space-md py-1 text-right">
+<button class="h-6 px-2 rounded bg-white hover:bg-slate-50 text-slate-700 font-label-sm text-label-sm font-sans border border-slate-200 shadow-xs">Inspect Logs</button>
+</td>
+</tr>
+<tr class="h-10 hover:bg-slate-50 transition-colors">
+<td class="px-space-md py-1 font-semibold text-sky-700">B-103</td>
+<td class="px-space-md py-1 font-sans text-slate-900 font-medium">Hydraulic Valve Bushing HV-12</td>
+<td class="px-space-md py-1 text-slate-600">Line C • Term 02</td>
+<td class="px-space-md py-1 text-slate-900">790 / 800</td>
+<td class="px-space-md py-1 text-emerald-700 font-semibold">0.25% (Nominal)</td>
+<td class="px-space-md py-1">
+<span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-label-sm text-label-sm border border-emerald-200 font-semibold">RELEASE READY</span>
+</td>
+<td class="px-space-md py-1 text-right">
+<button class="h-6 px-2 rounded bg-sky-600 hover:bg-sky-700 text-white font-label-sm text-label-sm font-sans font-semibold shadow-xs">Sign Off</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchTimeframe(tf, btn) {
+    document.querySelectorAll('.tf-btn').forEach(b => {
+      b.classList.remove('bg-sky-600', 'text-white', 'font-semibold', 'shadow-xs');
+      b.classList.add('text-slate-600');
+    });
+    btn.classList.remove('text-slate-600');
+    btn.classList.add('bg-sky-600', 'text-white', 'font-semibold', 'shadow-xs');
+  }
+
+  function triggerCalibration() {
+    const btn = document.getElementById('calibBtn');
+    const label = document.getElementById('calibLabel');
+    const icon = document.getElementById('calibIcon');
+    
+    icon.classList.add('animate-spin');
+    label.innerText = 'Calibrating Laser Array...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      icon.classList.remove('animate-spin');
+      label.innerText = 'Array Calibrated (0.001mm)';
+      icon.innerText = 'check_circle';
+      icon.classList.remove('text-sky-600');
+      icon.classList.add('text-emerald-600');
+
+      setTimeout(() => {
+        label.innerText = 'Trigger Fast Calibration';
+        icon.innerText = 'tune';
+        icon.classList.remove('text-emerald-600');
+        icon.classList.add('text-sky-600');
+        btn.disabled = false;
+      }, 3000);
+    }, 1400);
+  }
+
+  function exportReport() {
+    const notification = document.createElement('div');
+    notification.className = 'fixed bottom-4 right-4 z-50 bg-white border border-slate-200 text-slate-800 p-3 rounded shadow-xl flex items-center gap-2 font-body-md';
+    notification.innerHTML = '<span class="material-symbols-outlined text-sky-600 text-[20px]">cloud_download</span><span>Generating ISO-9001 Cryptographic Package for Batch B-101...</span>';
+    document.body.appendChild(notification);
+    setTimeout(() => {
+      notification.innerHTML = '<span class="material-symbols-outlined text-emerald-600 text-[20px]">check_circle</span><span>Package ISO-9001-B101.pdf downloaded.</span>';
+      setTimeout(() => notification.remove(), 2500);
+    }, 1200);
+  }
+</script></main></div></body></html>

@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary-fixed-variant": "#005236", "surface-container-high": "#1c2b3c", "error-container": "#93000a", "outline-variant": "#3f4850", "inverse-surface": "#d4e4fa", "on-primary-fixed-variant": "#004b73", "on-tertiary-fixed": "#410004", "surface-bright": "#2c3a4c", "surface-container-highest": "#273647", "outline": "#89929b", "on-tertiary-container": "#5c0008", "surface-container-lowest": "#010f1f", "surface": "#051424", "tertiary": "#ffb3ad", "on-surface-variant": "#bfc7d2", "primary-fixed": "#cce5ff", "tertiary-fixed-dim": "#ffb3ad", "secondary-fixed-dim": "#4edea3", "primary-fixed-dim": "#93ccff", "secondary-container": "#00a572", "error": "#ffb4ab", "on-tertiary": "#68000a", "secondary": "#4edea3", "primary-container": "#3198dc", "tertiary-fixed": "#ffdad7", "on-primary": "#003351", "on-secondary": "#003824", "on-secondary-fixed": "#002113", "inverse-on-surface": "#233143", "on-error": "#690005", "on-surface": "#d4e4fa", "surface-container-low": "#0d1c2d", "on-primary-fixed": "#001d31", "surface-tint": "#93ccff", "primary": "#93ccff", "on-tertiary-fixed-variant": "#930013", "on-background": "#d4e4fa", "background": "#051424", "surface-dim": "#051424", "inverse-primary": "#006398", "on-error-container": "#ffdad6", "on-secondary-container": "#00311f", "tertiary-container": "#ff5451", "surface-variant": "#273647", "surface-container": "#122131", "secondary-fixed": "#6ffbbe", "on-primary-container": "#002c47" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-md": "0.75rem", "margin": "1rem", "space-lg": "1rem", "space-xl": "1.5rem", "gutter": "0.75rem", "space-sm": "0.375rem", "space-xs": "0.25rem" }, fontFamily: { "body-lg": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "headline-xl": ["Inter"], "headline-sm": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"] }, fontSize: { "body-lg": ["15px", { lineHeight: "22px", letterSpacing: "0em", fontWeight: "400" }], "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "body-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400" }], "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }], "body-md": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col border-r border-outline-variant/30 select-none"><div class="h-14 px-space-lg flex items-center justify-between border-b border-outline-variant/20 bg-surface-container-low"><div class="flex items-center gap-space-sm min-w-0"><img alt="ApexVision Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XBWm9_mfVFKKoqlekfXgxnwqJ4X6Qnlts2CHNTwsv3C5z64YOFMbaf2qTYMTXQCBxx9Nnb9kyyvYcVIbUBepQX3PIpmb0azshtQfH0gXdQCdP8bhcdZNQQqlQqWDQ6BfNBG0Uq7vACh7XRMTYdeHmC19AL8rTOZ9Xuqxp34aAs5t2iWpVDxadeHDCKgfa3AwWHHBsL5M5KzWMpgOKRlnWXV-2u7w-A6DWNY8dfx18XP39qnmuN4tO_DZ4"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate">ApexVision</span></div><span class="px-space-xs py-0.5 rounded-lg bg-surface-container-highest text-primary font-label-sm text-label-sm border border-outline-variant/40 shrink-0">v2.4 Enterprise</span></div><div class="flex-1 overflow-y-auto px-space-md py-space-md space-y-space-md"><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">PRIMARY</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg transition-colors bg-primary-container text-on-primary-container font-headline-sm" data-path="executive-dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Executive Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="products-and-batches" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span>Products & Batches</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="defect-register" href="#"><span class="material-symbols-outlined text-[18px]">flag</span><span>Defect Register</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">OPERATIONS</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="inspection-intake" href="#"><span class="material-symbols-outlined text-[18px]">input</span><span>Inspection Intake</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="review-station" href="#"><span class="material-symbols-outlined text-[18px]">biotech</span><span>Review Station</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="reinspection" href="#"><span class="material-symbols-outlined text-[18px]">replay</span><span>Reinspection</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="batch-release-gate" href="#"><span class="material-symbols-outlined text-[18px]">verified</span><span>Batch Release Gate</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">INTELLIGENCE</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="grounded-genai-copilot" href="#"><span class="material-symbols-outlined text-[18px]">neurology</span><span>Grounded GenAI Copilot</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ml-evaluation-suite" href="#"><span class="material-symbols-outlined text-[18px]">analytics</span><span>ML Evaluation Suite</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="smart-triage-innovation" href="#"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span>Smart Triage Innovation</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">SYSTEM</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="audit-trail" href="#"><span class="material-symbols-outlined text-[18px]">history_edu</span><span>Audit Trail</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings-and-role-matrix" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span>Settings & Role Matrix</span></a></nav></div></div><div class="border-t border-outline-variant/30 bg-surface-container-low p-space-md space-y-space-sm"><div class="p-space-xs rounded-lg bg-surface-container border border-outline-variant/30 space-y-1"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>Edge Node 04</span><span class="font-label-sm text-label-sm text-secondary font-medium">Operational</span></div><div class="flex items-center justify-between font-label-sm text-label-sm text-outline"><span>Uptime: 99.98%</span><span>Latency: 2.4ms</span></div></div><div class="flex items-center gap-space-sm pt-space-xs"><div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary text-[18px]">badge</span></div><div class="min-w-0 flex-1"><div class="font-body-md text-body-md text-on-surface font-medium truncate">Mike Vance</div><div class="font-label-sm text-label-sm text-outline truncate">Lead Inspector • Cleanroom 4</div></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30 z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-md text-label-md text-outline"><span class="font-medium text-on-surface">Terminal 04</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-primary">AOI Real-Time Telemetry</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="px-space-xs py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary border border-secondary/20">LINE A-ACTIVE</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-outline text-[16px]">search</span><input class="h-8 pl-8 pr-12 rounded-lg bg-surface-container border border-outline-variant/40 text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:border-primary w-64 transition-all" placeholder="Search telemetry, batches, defects..." type="text"/><span class="absolute right-2 px-1 rounded bg-surface-container-high text-outline font-label-sm text-label-sm border border-outline-variant/30">⌘K</span></div><div class="relative cursor-pointer"><button class="h-8 w-8 rounded-lg bg-surface-container border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span></button><span class="absolute -top-1 -right-1 px-1 py-0.2 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm font-semibold border border-surface-container-lowest">3</span></div><div class="relative"><button class="h-8 px-space-sm rounded-lg bg-surface-container-high border border-primary/40 flex items-center gap-1.5 text-on-surface hover:border-primary transition-colors"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-label-md text-label-md font-semibold text-primary">Role: Inspector</span><span class="material-symbols-outlined text-outline text-[14px]">arrow_drop_down</span></button></div><div class="h-4 w-px bg-outline-variant/30"></div><div class="flex items-center gap-space-sm"><div class="relative"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span></div></div></div></header><main class="flex-1 pt-14 w-full bg-surface"><div class="flex flex-col w-full">
+<div class="p-space-lg space-y-space-md max-w-[1720px] mx-auto w-full">
+<!-- Top Action & Terminal Status Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-xs">
+<div>
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Executive Quality Intelligence</h1>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm border border-outline-variant/30 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+            AOI TELEMETRY ACTIVE
+          </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-outline">
+            STATION 04 • CLEANROOM ALPHA
+          </span>
+</div>
+<p class="font-body-md text-body-md text-outline mt-0.5">Real-time optical metrology, automated defect classification, and batch integrity audit stream.</p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="flex items-center bg-surface-container-lowest p-1 rounded-lg border border-outline-variant/30">
+<span class="font-label-sm text-label-sm text-outline px-2">CYCLE SPEED: 1.84s/pc</span>
+<div class="h-3 w-px bg-outline-variant/40"></div>
+<span class="font-label-sm text-label-sm text-secondary px-2 font-mono">YIELD: 98.4%</span>
+</div>
+<button class="h-8 px-space-md rounded bg-surface-container-high hover:bg-surface-bright text-on-surface border border-outline-variant/40 font-label-md text-label-md flex items-center gap-1.5 transition-all shadow-sm" id="calibBtn" onclick="triggerCalibration()">
+<span class="material-symbols-outlined text-[16px] text-primary" id="calibIcon">tune</span>
+<span id="calibLabel">Trigger Fast Calibration</span>
+</button>
+<button class="h-8 px-space-md rounded bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-label-md text-label-md flex items-center gap-1.5 transition-all shadow-sm" onclick="exportReport()">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export ISO-9001 Report</span>
+</button>
+</div>
+</div>
+<!-- 5 Top KPI Telemetry Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-sm">
+<!-- KPI 1: Inspected Items -->
+<div class="bg-surface-container-low rounded-lg p-space-md border border-outline-variant/30 shadow-sm relative overflow-hidden group hover:border-secondary/40 transition-colors">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm tracking-wider uppercase">Inspected Items</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-on-surface font-mono tracking-tight">428<span class="text-outline text-headline-sm font-normal"> / 500</span></span>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary/10 px-1.5 py-0.5 rounded border border-secondary/20 font-mono">+166.7%</span>
+</div>
+<div class="mt-3 flex items-center justify-between text-body-sm text-outline font-label-sm">
+<span>Batch B-101 target</span>
+<span class="text-on-surface font-mono">85.6% Completed</span>
+</div>
+<!-- Mini Sparkline inline SVG -->
+<div class="mt-2 h-7 w-full">
+<svg class="w-full h-full text-secondary stroke-current fill-none" preserveaspectratio="none" viewbox="0 0 100 24">
+<path d="M0,20 L15,18 L30,21 L45,13 L60,14 L75,8 L90,11 L100,4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></path>
+<polygon class="fill-secondary/10" points="0,20 15,18 30,21 45,13 60,14 75,8 90,11 100,4 100,24 0,24"></polygon>
+</svg>
+</div>
+</div>
+<!-- KPI 2: Pending Reviews -->
+<div class="bg-surface-container-low rounded-lg p-space-md border border-outline-variant/30 shadow-sm relative overflow-hidden group hover:border-tertiary-fixed-dim/40 transition-colors">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm tracking-wider uppercase">Pending Reviews</span>
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-tertiary font-mono tracking-tight">3</span>
+<span class="font-label-sm text-label-sm text-tertiary bg-tertiary/10 px-1.5 py-0.5 rounded border border-tertiary/20">Needs Review</span>
+</div>
+<div class="mt-3 flex items-center justify-between text-body-sm font-label-sm text-outline">
+<span>Awaiting Inspector verification</span>
+<span class="text-tertiary font-mono">Avg wait 8m</span>
+</div>
+<div class="mt-3 w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary h-1.5 rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+<!-- KPI 3: Confirmed Defects -->
+<div class="bg-surface-container-low rounded-lg p-space-md border border-outline-variant/30 shadow-sm relative overflow-hidden group hover:border-error/40 transition-colors">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm tracking-wider uppercase">Confirmed Defects</span>
+<span class="material-symbols-outlined text-error text-[18px]">gpp_bad</span>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-error font-mono tracking-tight">7</span>
+<span class="font-label-sm text-label-sm text-error bg-error/10 px-1.5 py-0.5 rounded border border-error/20 font-mono">1.6% Defect</span>
+</div>
+<div class="mt-3 flex items-center justify-between text-body-sm font-label-sm text-outline">
+<span>Tolerance violation score</span>
+<span class="text-on-surface font-mono">Crit: 2 | Maj: 5</span>
+</div>
+<!-- Sparkline mini -->
+<div class="mt-2 h-7 w-full">
+<svg class="w-full h-full text-error stroke-current fill-none" preserveaspectratio="none" viewbox="0 0 100 24">
+<path d="M0,22 L20,20 L35,21 L50,15 L65,19 L80,10 L100,8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></path>
+<polygon class="fill-error/10" points="0,22 20,20 35,21 50,15 65,19 80,10 100,8 100,24 0,24"></polygon>
+</svg>
+</div>
+</div>
+<!-- KPI 4: Open Actions -->
+<div class="bg-surface-container-low rounded-lg p-space-md border border-outline-variant/30 shadow-sm relative overflow-hidden group hover:border-primary/40 transition-colors">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm tracking-wider uppercase">Open Actions</span>
+<span class="material-symbols-outlined text-primary text-[18px]">assignment_late</span>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-on-surface font-mono tracking-tight">2</span>
+<span class="font-label-sm text-label-sm text-tertiary bg-tertiary/10 px-1.5 py-0.5 rounded border border-tertiary/20">1 High Pri</span>
+</div>
+<div class="mt-3 flex items-center justify-between text-body-sm font-label-sm text-outline">
+<span>Supervisor assigned</span>
+<span class="text-primary font-mono font-medium">CA-42 (Lead)</span>
+</div>
+<div class="mt-3 flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded bg-error"></span>
+<span class="w-2.5 h-2.5 rounded bg-tertiary"></span>
+<span class="w-2.5 h-2.5 rounded bg-surface-container-highest"></span>
+<span class="w-2.5 h-2.5 rounded bg-surface-container-highest"></span>
+<span class="text-outline font-label-sm text-label-sm ml-auto">2 In-Flight</span>
+</div>
+</div>
+<!-- KPI 5: Batch Status -->
+<div class="bg-surface-container-low rounded-lg p-space-md border border-outline-variant/30 shadow-sm relative overflow-hidden group hover:border-primary/40 transition-colors">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm tracking-wider uppercase">Batch Status</span>
+<span class="material-symbols-outlined text-primary text-[18px]">fact_check</span>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm text-tertiary font-mono tracking-tight flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-[18px]">pause_circle</span>
+            B-101 HOLD
+          </span>
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20 font-mono">4 ACTIVE</span>
+</div>
+<div class="mt-3 flex items-center justify-between text-body-sm font-label-sm text-outline">
+<span>Line A: Flange TF1047A</span>
+<span class="text-on-surface font-mono">Rev B QA Gate</span>
+</div>
+<div class="mt-3 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-outline">Cleanroom 4</span>
+<span class="text-secondary font-mono flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 3 lines nominal
+          </span>
+</div>
+</div>
+</div>
+<!-- Live Inspection Optical Stage Preview Banner (Visual Context) -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/30 overflow-hidden shadow-md flex flex-col md:flex-row items-stretch">
+<div class="relative w-full md:w-80 h-36 md:h-auto shrink-0 bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover opacity-85" data-alt="Close up automated optical inspection camera setup showing precision CNC machined titanium aircraft component mounted in circular ring light fixture with crosshair laser reticles and micron measurement annotations in industrial dark cleanroom." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuiRr9UMpir6O-usURfcC9Hv_NQJJzt5jX16KsUXIPi9-C6nu_GOdXSAJlGYzqr36xKNd5_UFfqdkZK0rMN47M7l_puqFK_pYPesXAWbh5d0JPgvy23eETyM50wIjW12ha3ns5e3ZJmmJtwEv4nYcjLoE-eceqBtHcSjbNd3g9x9cn4u2ih0fELbM-ABuOJpayL3RPU-P5eQwoF6DNLy4sbprhvDNskk1KFxv3_JcwnXSEQ5rA4kqN1Q"/>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-surface-container-lowest md:block hidden"></div>
+<div class="absolute top-2 left-2 bg-surface-container-lowest/90 backdrop-blur px-2 py-0.5 rounded border border-outline-variant/40 font-label-sm text-label-sm text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+          FEED: CAM-AOI-01
+        </div>
+<div class="absolute bottom-2 left-2 bg-surface-container-lowest/90 px-2 py-0.5 rounded border border-outline-variant/40 font-label-sm text-label-sm font-mono text-outline">
+          TF1047A REV B • OP 86
+        </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs border-b border-outline-variant/20 pb-space-xs">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Active Optical Unit Telemetry</span>
+<div class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span>Machined Flange Assembly TF1047A</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container/40 text-error font-mono text-label-sm border border-error/30">FLAGGED: SCRATCH CA-42</span>
+</div>
+</div>
+<div class="flex items-center gap-2 font-mono font-label-sm text-label-sm text-outline">
+<span>Laser Datum: <b class="text-on-surface">Ø 9.53mm ± 0.012</b></span>
+<span>•</span>
+<span>Hole Pos: <b class="text-secondary">0.008mm TP</b></span>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-xs text-body-sm">
+<div>
+<div class="text-outline font-label-sm text-label-sm">ILLUMINATION</div>
+<div class="text-on-surface font-mono font-medium">Polarized Ring 480nm</div>
+</div>
+<div>
+<div class="text-outline font-label-sm text-label-sm">NEURAL MODEL</div>
+<div class="text-on-surface font-mono font-medium">MetalDefect-ResNet v1.2</div>
+</div>
+<div>
+<div class="text-outline font-label-sm text-label-sm">DEFECT CLASS</div>
+<div class="text-error font-mono font-medium">Surface Scratch (Major)</div>
+</div>
+<div class="flex items-center justify-end">
+<a class="h-7 px-space-sm rounded bg-surface-container-high hover:bg-surface-bright text-primary font-label-md text-label-md border border-outline-variant/40 flex items-center gap-1 transition-colors" href="#">
+<span>Inspect Raw Frame</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Middle Section: Defect Trend (2/3) + Defect Category Breakdown (1/3) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- Left 2/3: Defect Trend & Shift Distribution -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-lg p-space-md border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-xs gap-space-xs border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">monitoring</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Defect Trend & Shift Distribution</h2>
+<span class="text-outline font-label-sm text-label-sm font-mono">(Live PPM Telemetry)</span>
+</div>
+<!-- Timeframe Pills -->
+<div class="flex items-center bg-surface-container rounded p-0.5 border border-outline-variant/30 text-label-sm font-label-sm">
+<button class="tf-btn px-2.5 py-1 rounded bg-primary-container text-on-primary-container font-semibold transition-all" onclick="switchTimeframe('24h', this)">24h</button>
+<button class="tf-btn px-2.5 py-1 rounded text-outline hover:text-on-surface transition-all" onclick="switchTimeframe('7d', this)">7d</button>
+<button class="tf-btn px-2.5 py-1 rounded text-outline hover:text-on-surface transition-all" onclick="switchTimeframe('30d', this)">30d</button>
+</div>
+</div>
+<!-- Subheader / Legend -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs text-label-sm font-label-sm text-outline">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-error"></span> Critical Defect</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span> Major Flaw</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-primary"></span> Minor Scuff</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-0.5 bg-secondary"></span> Tolerance Ceiling</span>
+</div>
+<span class="font-mono text-secondary">Current Shift: Shift 02 (14:00 - 22:00)</span>
+</div>
+</div>
+<!-- Inline Telemetry Graph -->
+<div class="py-space-md">
+<div class="relative w-full h-56 bg-surface-container-lowest/60 rounded border border-outline-variant/20 p-space-sm flex flex-col justify-between">
+<!-- Grid Lines -->
+<div class="absolute inset-x-space-sm top-4 border-b border-outline-variant/10 text-outline text-[9px] font-mono flex justify-between"><span>25 PPM</span><span>CRITICAL THRESHOLD</span></div>
+<div class="absolute inset-x-space-sm top-16 border-b border-outline-variant/10 text-outline text-[9px] font-mono flex justify-between"><span>18 PPM</span><span>UPPER BOUND</span></div>
+<div class="absolute inset-x-space-sm top-28 border-b border-outline-variant/10 text-outline text-[9px] font-mono flex justify-between"><span>10 PPM</span><span>TARGET NOMINAL</span></div>
+<div class="absolute inset-x-space-sm top-40 border-b border-outline-variant/10 text-outline text-[9px] font-mono flex justify-between"><span>02 PPM</span><span>BASELINE</span></div>
+<!-- SVG Data Layer -->
+<svg class="w-full h-full relative z-10 overflow-visible" preserveaspectratio="none" viewbox="0 0 700 170">
+<defs>
+<lineargradient id="critGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ff5451" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#ff5451" stop-opacity="0"></stop>
+</lineargradient>
+<lineargradient id="majGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ffb3ad" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#ffb3ad" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Tolerance dotted threshold line -->
+<line stroke="#4edea3" stroke-dasharray="4 4" stroke-opacity="0.7" stroke-width="1.5" x1="0" x2="700" y1="28" y2="28"></line>
+<!-- Area Fill Major -->
+<polygon fill="url(#majGrad)" points="0,140 70,135 140,110 210,125 280,85 350,95 420,60 490,105 560,90 630,75 700,65 700,165 0,165"></polygon>
+<!-- Minor Defect Wave -->
+<path d="M0,150 L70,145 L140,138 L210,142 L280,120 L350,130 L420,110 L490,130 L560,115 L630,105 L700,95" fill="none" stroke="#93ccff" stroke-opacity="0.8" stroke-width="1.5"></path>
+<!-- Major Defect Wave -->
+<path d="M0,140 L70,135 L140,110 L210,125 L280,85 L350,95 L420,60 L490,105 L560,90 L630,75 L700,65" fill="none" stroke="#ffb3ad" stroke-width="2"></path>
+<!-- Critical Defect Peak (Red) -->
+<polygon fill="url(#critGrad)" points="280,165 350,110 420,40 450,85 490,165"></polygon>
+<path d="M280,165 L350,110 L420,40 L450,85 L490,165" fill="none" stroke="#ff5451" stroke-width="2.25"></path>
+<!-- Data Markers -->
+<circle cx="420" cy="40" fill="#ff5451" r="4.5" stroke="#051424" stroke-width="2"></circle>
+<text fill="#ffb4ab" font-family="Inter" font-size="10" font-weight="600" x="428" y="38">Peak @ 10:57 (Batch B-101 Spike)</text>
+<circle cx="630" cy="75" fill="#ffb3ad" r="3.5" stroke="#051424" stroke-width="1.5"></circle>
+<circle cx="700" cy="65" fill="#4edea3" r="3.5" stroke="#051424" stroke-width="1.5"></circle>
+</svg>
+<!-- Shift Timeline Ticks -->
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm font-mono pt-1">
+<span>06:00 (Shift 1)</span>
+<span>09:00</span>
+<span>12:00</span>
+<span class="text-tertiary">15:00 (Active Shift 2)</span>
+<span>18:00</span>
+<span>21:00</span>
+<span>00:00 (Shift 3)</span>
+</div>
+</div>
+</div>
+<!-- Footnote Status -->
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline border-t border-outline-variant/20 pt-space-xs">
+<span>AI Metrology Edge Inference: 42ms/frame • ResNet-50 v1.2</span>
+<span class="text-on-surface font-mono">Statistical Process Control: <b class="text-secondary font-semibold">Cpk 1.48 (Capable)</b></span>
+</div>
+</div>
+<!-- Right 1/3: Defect Category Breakdown -->
+<div class="bg-surface-container-low rounded-lg p-space-md border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">pie_chart</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Defect Breakdown</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline font-mono">B-101 CUMULATIVE</span>
+</div>
+<!-- Donut Graphic Representation -->
+<div class="py-space-md flex flex-col items-center">
+<div class="relative w-44 h-44">
+<!-- SVG Donut Chart -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Track -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#1c2b3c" stroke-width="12"></circle>
+<!-- Scratch 42% (Perimeter = 2 * PI * 38 ≈ 238.76). 42% = 100.28 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#ff5451" stroke-dasharray="100.28 238.76" stroke-dashoffset="0" stroke-width="12"></circle>
+<!-- Porosity 26% = 62.07 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#ffb3ad" stroke-dasharray="62.07 238.76" stroke-dashoffset="-100.28" stroke-width="12"></circle>
+<!-- Burr 18% = 42.97 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#3198dc" stroke-dasharray="42.97 238.76" stroke-dashoffset="-162.35" stroke-width="12"></circle>
+<!-- Dimensional 14% = 33.42 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#4edea3" stroke-dasharray="33.42 238.76" stroke-dashoffset="-205.32" stroke-width="12"></circle>
+</svg>
+<!-- Center Text -->
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-headline-lg text-headline-lg font-mono text-on-surface font-bold tracking-tight">100</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Total Flaws</span>
+</div>
+</div>
+</div>
+<!-- Detailed Legend Rows -->
+<div class="space-y-space-xs font-label-md text-label-md">
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container/60 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-tertiary-container"></span>
+<span class="text-on-surface">Surface Scratch</span>
+</div>
+<div class="flex items-center gap-2 font-mono">
+<span class="text-outline">42 instances</span>
+<span class="text-error font-semibold">42%</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container/60 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-tertiary"></span>
+<span class="text-on-surface">Micro Porosity</span>
+</div>
+<div class="flex items-center gap-2 font-mono">
+<span class="text-outline">26 instances</span>
+<span class="text-tertiary font-semibold">26%</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container/60 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-primary-container"></span>
+<span class="text-on-surface">Machining Burr</span>
+</div>
+<div class="flex items-center gap-2 font-mono">
+<span class="text-outline">18 instances</span>
+<span class="text-primary font-semibold">18%</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container/60 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-secondary"></span>
+<span class="text-on-surface">Dimensional Deviation</span>
+</div>
+<div class="flex items-center gap-2 font-mono">
+<span class="text-outline">14 instances</span>
+<span class="text-secondary font-semibold">14%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-sm border-t border-outline-variant/20 mt-space-sm flex items-center justify-between text-body-sm font-label-sm text-outline">
+<span>AI Detected vs Human Confirmed:</span>
+<span class="text-on-surface font-mono font-medium">93 / 100 Match (93%)</span>
+</div>
+</div>
+</div>
+<!-- Lower Grid: Inspection Pipeline Health (Left) + Live Audit Stream (Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Inspection Pipeline Health (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-low rounded-lg p-space-md border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">speed</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Inspection Pipeline Health</h2>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-secondary/10 text-secondary font-label-sm text-label-sm border border-secondary/20">
+              OPERATIONAL
+            </span>
+</div>
+<div class="mt-space-md space-y-space-md">
+<!-- Meter 1: Reviewed & Confirmed -->
+<div class="space-y-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface font-medium">Reviewed & Confirmed</span>
+</div>
+<span class="font-mono text-secondary font-semibold">94.2%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-secondary h-2 rounded-full" style="width: 94.2%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-outline font-mono">
+<span>403 units passed</span>
+<span>Target: >92.0%</span>
+</div>
+</div>
+<!-- Meter 2: Pending Verification -->
+<div class="space-y-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-on-surface font-medium">Pending Verification</span>
+</div>
+<span class="font-mono text-tertiary font-semibold">4.8%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-tertiary h-2 rounded-full" style="width: 4.8%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-outline font-mono">
+<span>21 units in review queue</span>
+<span>SLA max: 6.0%</span>
+</div>
+</div>
+<!-- Meter 3: Reinspection Required -->
+<div class="space-y-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-on-surface font-medium">Reinspection Required</span>
+</div>
+<span class="font-mono text-primary font-semibold">0.8%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full" style="width: 0.8%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-outline font-mono">
+<span>3 units flagged for second pass</span>
+<span>Rework Bay 02</span>
+</div>
+</div>
+<!-- Meter 4: Edge Processing Flaws -->
+<div class="space-y-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="text-on-surface font-medium">Edge Processing Flaws</span>
+</div>
+<span class="font-mono text-outline font-semibold">0.2%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-outline h-2 rounded-full" style="width: 0.2%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-outline font-mono">
+<span>1 dropped frame / sensor blur</span>
+<span>Zero hardware faults</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md p-space-sm rounded bg-surface-container border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">high_quality</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Overall Equipment Effectiveness (OEE)</div>
+<div class="font-label-sm text-label-sm text-outline">Availability: 99.1% • Performance: 97.4%</div>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono font-bold">96.5%</span>
+</div>
+</div>
+<!-- Live Audit & Event Timeline (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-low rounded-lg p-space-md border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">history_edu</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Live Audit & Event Timeline</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-outline font-mono">21 CFR PART 11 COMPLIANT</span>
+</div>
+</div>
+<!-- Chronological Stream -->
+<div class="mt-space-md relative pl-6 space-y-space-md before:absolute before:left-2 before:top-2 before:bottom-2 before:w-px before:bg-outline-variant/40">
+<!-- Event 1: 11:15 AM (Elena Rostova) -->
+<div class="relative group">
+<div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-surface-container-low border-2 border-tertiary flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+</div>
+<div class="bg-surface-container/70 group-hover:bg-surface-container p-space-sm rounded border border-outline-variant/30 transition-all">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Elena Rostova</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-bright text-outline font-label-sm text-label-sm">Quality Manager</span>
+</div>
+<span class="font-mono text-outline font-label-sm text-label-sm">11:15 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                  Placed <span class="font-mono font-semibold text-tertiary bg-tertiary/10 px-1 rounded">Batch B-101</span> on Quality Hold pending reinspection and root-cause verification with Machining Cell 03.
+                </p>
+<div class="mt-2 flex items-center gap-2 font-mono text-[11px] text-outline">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">lock</span> Disposition: HOLD_SCRAP_RISK</span>
+<span>•</span>
+<span>Auth: E-SIGN_ER994</span>
+</div>
+</div>
+</div>
+<!-- Event 2: 11:02 AM (Mike Vance Confirm) -->
+<div class="relative group">
+<div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-surface-container-low border-2 border-error flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-error"></div>
+</div>
+<div class="bg-surface-container/70 group-hover:bg-surface-container p-space-sm rounded border border-outline-variant/30 transition-all">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Mike Vance</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-bright text-outline font-label-sm text-label-sm">Inspector (Lead)</span>
+</div>
+<span class="font-mono text-outline font-label-sm text-label-sm">11:02 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                  Confirmed <span class="font-mono font-semibold text-error">DEF-101 (Major Scratch)</span> & opened Corrective Action <span class="font-mono font-semibold text-primary bg-primary/10 px-1 rounded">CA-42</span>. Assigned to Tooling Maintenance.
+                </p>
+<div class="mt-2 flex items-center gap-2 font-mono text-[11px] text-outline">
+<span class="text-error font-medium">Deviation: 0.18mm Depth</span>
+<span>•</span>
+<span>Target: Cleanroom Tooling Station 02</span>
+</div>
+</div>
+</div>
+<!-- Event 3: 10:57 AM (Model AI Flag) -->
+<div class="relative group">
+<div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-surface-container-low border-2 border-primary flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+</div>
+<div class="bg-surface-container/70 group-hover:bg-surface-container p-space-sm rounded border border-outline-variant/30 transition-all">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-primary font-semibold font-mono">MetalDefectVision-ResNet v1.2</span>
+<span class="px-1.5 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm font-mono">AI Inference</span>
+</div>
+<span class="font-mono text-outline font-label-sm text-label-sm">10:57 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                  AI Flagged Surface Scratch @ confidence score <span class="font-mono font-semibold text-secondary">95.8%</span> on Flange Sealing Face (Sector 3).
+                </p>
+<div class="mt-2 flex items-center gap-2 font-mono text-[11px] text-outline">
+<span>Bounding Box: [x:412, y:288, w:84, h:12]</span>
+<span>•</span>
+<span>Inference Latency: 38ms</span>
+</div>
+</div>
+</div>
+<!-- Event 4: 10:57 AM (Mike Vance Intake) -->
+<div class="relative group">
+<div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-surface-container-low border-2 border-outline flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
+</div>
+<div class="bg-surface-container/70 group-hover:bg-surface-container p-space-sm rounded border border-outline-variant/30 transition-all">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Mike Vance</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-bright text-outline font-label-sm text-label-sm">Inspector (Lead)</span>
+</div>
+<span class="font-mono text-outline font-label-sm text-label-sm">10:57 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                  Uploaded high-res inspection optical capture for <span class="font-mono text-on-surface font-semibold">Batch B-101 (Flange #42)</span> from Terminal 04 telecentric lens.
+                </p>
+<div class="mt-2 flex items-center gap-2 font-mono text-[11px] text-outline">
+<span>Raw TIFF: 4096x3072 px</span>
+<span>•</span>
+<span>Hash: 8a9f...c24e</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-sm border-t border-outline-variant/20 mt-space-sm flex items-center justify-between text-body-sm font-label-sm">
+<span class="text-outline">Showing last 4 telemetry events in active shift</span>
+<a class="text-primary hover:text-primary-fixed flex items-center gap-1 font-medium transition-colors" href="#">
+<span>View Full Audit Vault</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Collapsible Batch Registry Mini Table -->
+<div class="bg-surface-container-low rounded-lg border border-outline-variant/30 shadow-sm overflow-hidden">
+<div class="p-space-md flex items-center justify-between border-b border-outline-variant/20 bg-surface-container-lowest/40">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">view_timeline</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Active Production Batches on Inspection Floor</span>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-outline">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>4 Live Conveyors Active</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="h-8 bg-surface-container-lowest text-outline font-label-sm text-label-sm uppercase tracking-wider border-b border-outline-variant/20">
+<th class="px-space-md py-1">Batch Code</th>
+<th class="px-space-md py-1">Product Component</th>
+<th class="px-space-md py-1">Line / Station</th>
+<th class="px-space-md py-1">Sample Count</th>
+<th class="px-space-md py-1">Defect Yield</th>
+<th class="px-space-md py-1">Quality Gate</th>
+<th class="px-space-md py-1 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 text-on-surface font-mono">
+<tr class="h-10 hover:bg-surface-container-high/40 transition-colors">
+<td class="px-space-md py-1 font-semibold text-tertiary">B-101</td>
+<td class="px-space-md py-1 font-sans text-on-surface">Machined Flange TF1047A Rev B</td>
+<td class="px-space-md py-1 text-outline">Line A • Term 04</td>
+<td class="px-space-md py-1">428 / 500</td>
+<td class="px-space-md py-1 text-error font-semibold">1.63% (Fail)</td>
+<td class="px-space-md py-1">
+<span class="px-2 py-0.5 rounded bg-tertiary/15 text-tertiary font-label-sm text-label-sm border border-tertiary/30">QUALITY HOLD</span>
+</td>
+<td class="px-space-md py-1 text-right">
+<button class="h-6 px-2 rounded bg-surface-container hover:bg-surface-bright text-primary font-label-sm text-label-sm font-sans border border-outline-variant/30">Review Station</button>
+</td>
+</tr>
+<tr class="h-10 hover:bg-surface-container-high/40 transition-colors">
+<td class="px-space-md py-1 font-semibold text-secondary">B-102</td>
+<td class="px-space-md py-1 font-sans text-on-surface">Turbine Ring Impeller TR-88</td>
+<td class="px-space-md py-1 text-outline">Line B • Term 01</td>
+<td class="px-space-md py-1">210 / 250</td>
+<td class="px-space-md py-1 text-secondary font-semibold">0.12% (Nominal)</td>
+<td class="px-space-md py-1">
+<span class="px-2 py-0.5 rounded bg-secondary/15 text-secondary font-label-sm text-label-sm border border-secondary/30">PASSING GATE</span>
+</td>
+<td class="px-space-md py-1 text-right">
+<button class="h-6 px-2 rounded bg-surface-container hover:bg-surface-bright text-on-surface font-label-sm text-label-sm font-sans border border-outline-variant/30">Inspect Logs</button>
+</td>
+</tr>
+<tr class="h-10 hover:bg-surface-container-high/40 transition-colors">
+<td class="px-space-md py-1 font-semibold text-secondary">B-103</td>
+<td class="px-space-md py-1 font-sans text-on-surface">Hydraulic Valve Bushing HV-12</td>
+<td class="px-space-md py-1 text-outline">Line C • Term 02</td>
+<td class="px-space-md py-1">790 / 800</td>
+<td class="px-space-md py-1 text-secondary font-semibold">0.25% (Nominal)</td>
+<td class="px-space-md py-1">
+<span class="px-2 py-0.5 rounded bg-secondary/15 text-secondary font-label-sm text-label-sm border border-secondary/30">RELEASE READY</span>
+</td>
+<td class="px-space-md py-1 text-right">
+<button class="h-6 px-2 rounded bg-secondary-container hover:bg-secondary text-on-secondary-container font-label-sm text-label-sm font-sans font-semibold">Sign Off</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchTimeframe(tf, btn) {
+    document.querySelectorAll('.tf-btn').forEach(b => {
+      b.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-semibold');
+      b.classList.add('text-outline');
+    });
+    btn.classList.remove('text-outline');
+    btn.classList.add('bg-primary-container', 'text-on-primary-container', 'font-semibold');
+  }
+
+  function triggerCalibration() {
+    const btn = document.getElementById('calibBtn');
+    const label = document.getElementById('calibLabel');
+    const icon = document.getElementById('calibIcon');
+    
+    icon.classList.add('animate-spin');
+    label.innerText = 'Calibrating Laser Array...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      icon.classList.remove('animate-spin');
+      label.innerText = 'Array Calibrated (0.001mm)';
+      icon.innerText = 'check_circle';
+      icon.classList.remove('text-primary');
+      icon.classList.add('text-secondary');
+
+      setTimeout(() => {
+        label.innerText = 'Trigger Fast Calibration';
+        icon.innerText = 'tune';
+        icon.classList.remove('text-secondary');
+        icon.classList.add('text-primary');
+        btn.disabled = false;
+      }, 3000);
+    }, 1400);
+  }
+
+  function exportReport() {
+    const originalText = 'Export ISO-9001 Report';
+    const notification = document.createElement('div');
+    notification.className = 'fixed bottom-4 right-4 z-50 bg-surface-container-highest border border-primary/40 text-on-surface p-3 rounded-lg shadow-xl flex items-center gap-2 font-body-md';
+    notification.innerHTML = '<span class="material-symbols-outlined text-secondary text-[20px]">cloud_download</span><span>Generating ISO-9001 Cryptographic Package for Batch B-101...</span>';
+    document.body.appendChild(notification);
+    setTimeout(() => {
+      notification.innerHTML = '<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span><span>Package ISO-9001-B101.pdf downloaded.</span>';
+      setTimeout(() => notification.remove(), 2500);
+    }, 1200);
+  }
+</script></main></div></body></html>
